@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="id репозитория" />
+      <option name="name" value="id репозитория" />
+      <option name="url" value="https://maven.google.com/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="google.com" />
+      <option name="name" value="google.com" />
+      <option name="url" value="https://maven.google.com" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="https://mvnrepository.com/artifact/androidx.appcompat/appcompat" />
+      <option name="name" value="https://mvnrepository.com/artifact/androidx.appcompat/appcompat" />
+      <option name="url" value="https://maven.google.com/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="https://mvnrepository.com/artifact/androidx.activity/activity" />
+      <option name="name" value="https://mvnrepository.com/artifact/androidx.activity/activity" />
+      <option name="url" value="https://maven.google.com/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="google" />
+      <option name="name" value="google" />
+      <option name="url" value="https://maven.google.com" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="scm:git:https://android.googlesource.com/platform/frameworks/support" />
+      <option name="name" value="scm:git:https://android.googlesource.com/platform/frameworks/support" />
+      <option name="url" value="https://cs.android.com/androidx/platform/frameworks/support" />
+    </remote-repository>
+  </component>
+</project>
