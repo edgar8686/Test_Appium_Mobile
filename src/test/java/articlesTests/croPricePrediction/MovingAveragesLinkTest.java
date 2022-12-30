@@ -28,7 +28,7 @@ public class MovingAveragesLinkTest extends AbstractTest {
             tapElement.tapCroPrice();
             Thread.sleep(4000);
             tapElement.tapMovingAverages();
-            Thread.sleep(15000);
+            Thread.sleep(5000);
             getAndroidDriver().context("WEBVIEW_chrome");
             Thread.sleep(5000);
         } catch (Exception e) {

@@ -28,7 +28,7 @@ public class MainnetLinkTest extends AbstractTest {
             tapElement.tapCroPrice();
             Thread.sleep(5000);
             tapElement.tapMainnet();
-            Thread.sleep(15000);
+            Thread.sleep(5000);
             getAndroidDriver().context("WEBVIEW_chrome");
             Thread.sleep(5000);
         } catch (Exception e) {

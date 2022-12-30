@@ -27,7 +27,7 @@ public class Cro4LinkTest extends AbstractTest {
             Thread.sleep(3000);
             tapElement.tapCroPrice();
             tapElement.tapCro4();
-            Thread.sleep(15000);
+            Thread.sleep(5000);
             getAndroidDriver().context("WEBVIEW_chrome");
             Thread.sleep(4000);
         } catch (Exception e) {

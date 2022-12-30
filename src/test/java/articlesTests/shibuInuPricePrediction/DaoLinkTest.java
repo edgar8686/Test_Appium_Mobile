@@ -46,7 +46,7 @@ public class DaoLinkTest extends AbstractTest {
                     .release()
                     .perform();
             tapElement.tapDao();
-            Thread.sleep(15000);
+            Thread.sleep(5000);
             getAndroidDriver().context("WEBVIEW_chrome");
             Thread.sleep(3000);
         } catch (Exception e) {

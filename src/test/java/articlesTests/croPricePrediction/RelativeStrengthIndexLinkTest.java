@@ -28,7 +28,7 @@ public class RelativeStrengthIndexLinkTest extends AbstractTest {
             tapElement.tapCroPrice();
             Thread.sleep(5000);
             tapElement.tapRelativeStrengthIndex();
-            Thread.sleep(15000);
+            Thread.sleep(5000);
             getAndroidDriver().context("WEBVIEW_chrome");
             Thread.sleep(3000);
         } catch (Exception e) {

@@ -22,8 +22,8 @@ public abstract class AbstractTest {
         dc.setCapability("deviceName", "sdk_gphone64_x86_64");
         dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UIAutomator2");
         dc.setCapability("app", "C:\\Users\\edgar\\AndroidStudioProjects\\MyApplication\\app\\src\\main\\res\\xml\\Crypto Academy.apk");
-        dc.setCapability("chromedriverDisableBuildCheck", "true");
-        dc.setCapability("autoWebviewTimeout", "10000");
+       // dc.setCapability("chromedriverDisableBuildCheck", "true");
+       // dc.setCapability("autoWebviewTimeout", "15000");
         dc.setCapability("isHeadless", "true");
         // dc.setCapability(MobileCapabilityType.NO_RESET, "true");
         // dc.setCapability(MobileCapabilityType.FULL_RESET,"false");

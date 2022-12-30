@@ -34,9 +34,9 @@ public class BitcoinBtcLinkTest extends AbstractTest {
                     .release()
                     .perform();
             tapElement.tapBitcoinBtc();
-            Thread.sleep(15000);
+            Thread.sleep(5000);
             getAndroidDriver().context("WEBVIEW_chrome");
-            Thread.sleep(3000);
+            Thread.sleep(5000);
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Shibu inu price prediction)  BitcoinBTCLinkTest- False" + System.currentTimeMillis() + ".png");
             MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()));

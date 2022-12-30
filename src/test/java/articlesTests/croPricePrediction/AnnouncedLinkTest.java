@@ -26,9 +26,10 @@ public class AnnouncedLinkTest extends AbstractTest {
             tapElement.goToArticles();
             Thread.sleep(3000);
             tapElement.tapCroPrice();
-            Thread.sleep(5000);
             tapElement.tapAnnounced();
+            Thread.sleep(5000);
             getAndroidDriver().context("WEBVIEW_chrome");
+            Thread.sleep(5000);
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (CRO price prediction) AnnouncedLinkTest- False" + System.currentTimeMillis() + ".png");
             MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()));

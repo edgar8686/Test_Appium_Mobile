@@ -37,9 +37,9 @@ public class NonFungibleTokenLinkTest extends AbstractTest {
                     .perform();
 
             tapElement.tapNonFungibleToken();
-            Thread.sleep(15000);
+            Thread.sleep(5000);
             getAndroidDriver().context("WEBVIEW_chrome");
-            Thread.sleep(3000);
+            Thread.sleep(5000);
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (CRO price prediction) NonFungibleTokenLinkTest- False" + System.currentTimeMillis() + ".png");
             MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()));

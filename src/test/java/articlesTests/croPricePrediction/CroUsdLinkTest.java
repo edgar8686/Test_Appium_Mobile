@@ -27,7 +27,7 @@ public class CroUsdLinkTest extends AbstractTest {
             Thread.sleep(3000);
             tapElement.tapCroPrice();
             tapElement.tapCroUsd();
-            Thread.sleep(15000);
+            Thread.sleep(5000);
             getAndroidDriver().context("WEBVIEW_chrome");
             Thread.sleep(3000);
             System.out.println(getAndroidDriver().getTitle());

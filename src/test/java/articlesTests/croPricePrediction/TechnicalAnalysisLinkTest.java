@@ -27,7 +27,7 @@ public class TechnicalAnalysisLinkTest extends AbstractTest {
             Thread.sleep(3000);
             tapElement.tapCroPrice();
             tapElement.tapTechnicalAnalysis();
-            Thread.sleep(15000);
+            Thread.sleep(5000);
             getAndroidDriver().context("WEBVIEW_chrome");
             Thread.sleep(5000);
         } catch (Exception e) {

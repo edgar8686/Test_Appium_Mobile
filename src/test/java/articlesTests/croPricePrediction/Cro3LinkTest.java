@@ -26,9 +26,9 @@ public class Cro3LinkTest extends AbstractTest {
             tapElement.goToArticles();
             Thread.sleep(3000);
             tapElement.tapCroPrice();
-            Thread.sleep(5000);
+            Thread.sleep(3000);
             tapElement.tapCro3();
-            Thread.sleep(15000);
+            Thread.sleep(5000);
             getAndroidDriver().context("WEBVIEW_chrome");
             Thread.sleep(4000);
         } catch (Exception e) {

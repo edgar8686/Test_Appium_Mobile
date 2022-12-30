@@ -71,7 +71,7 @@ public class Shib2LinkTest extends AbstractTest {
                     .perform();
 
             tapElement.tapShib2();
-            Thread.sleep(15000);
+            Thread.sleep(5000);
             getAndroidDriver().context("WEBVIEW_chrome");
             Thread.sleep(5000);
         } catch (Exception e) {

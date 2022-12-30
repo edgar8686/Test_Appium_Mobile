@@ -41,7 +41,7 @@ public class WhitepaperLinkTest extends AbstractTest {
                     .release()
                     .perform();
             tapElement.tapWhitepaper();
-            Thread.sleep(15000);
+            Thread.sleep(5000);
             getAndroidDriver().context("WEBVIEW_chrome");
             Thread.sleep(5000);
         } catch (Exception e) {
