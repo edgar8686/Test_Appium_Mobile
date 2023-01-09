@@ -27,9 +27,9 @@ public class ShibLinkTest extends AbstractTest {
             tapElement.tapShibaInuPrice();
             Thread.sleep(3000);
             tapElement.tapShibLink();
-            Thread.sleep(5000);
+            Thread.sleep(1000);
             getAndroidDriver().context("WEBVIEW_chrome");
-            Thread.sleep(5000);
+            Thread.sleep(1000);
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Shibu inu price prediction)  ShibLinkTest- False" + System.currentTimeMillis() + ".png");
             MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()));

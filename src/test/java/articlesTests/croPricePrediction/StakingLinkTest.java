@@ -41,9 +41,9 @@ public class StakingLinkTest extends AbstractTest {
                     .release()
                     .perform();
             tapElement.tapStaking();
-            Thread.sleep(5000);
+            Thread.sleep(1000);
             getAndroidDriver().context("WEBVIEW_chrome");
-            Thread.sleep(5000);
+            Thread.sleep(1000);
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (CRO price prediction) StakingLinkTest- False" + System.currentTimeMillis() + ".png");
             MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()));

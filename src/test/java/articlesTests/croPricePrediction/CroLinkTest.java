@@ -28,9 +28,9 @@ public class CroLinkTest extends AbstractTest {
             tapElement.tapCroPrice();
             Thread.sleep(3000);
             tapElement.tapCro();
-            Thread.sleep(5000);
+            Thread.sleep(1000);
             getAndroidDriver().context("WEBVIEW_chrome");
-            Thread.sleep(5000);
+            Thread.sleep(1000);
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (CRO price prediction)  CroLinkTest- False" + System.currentTimeMillis() + ".png");
             MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()));

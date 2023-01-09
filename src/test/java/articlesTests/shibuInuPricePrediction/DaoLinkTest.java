@@ -46,9 +46,9 @@ public class DaoLinkTest extends AbstractTest {
                     .release()
                     .perform();
             tapElement.tapDao();
-            Thread.sleep(5000);
+            Thread.sleep(1000);
             getAndroidDriver().context("WEBVIEW_chrome");
-            Thread.sleep(3000);
+            Thread.sleep(1000);
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Shibu inu price prediction)  DAOLinkTest- False" + System.currentTimeMillis() + ".png");
             MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()));

@@ -77,6 +77,7 @@ public class ArticlesElements extends AbstractPageObject {
     private MobileElement cronosChain;
     @AndroidFindBy(accessibility = "CRO/USD")
     private MobileElement croUsd;
+    //
 
 
     public ArticlesElements(AndroidDriver driver) {
