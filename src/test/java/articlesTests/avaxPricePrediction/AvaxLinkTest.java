@@ -2,7 +2,7 @@ package articlesTests.avaxPricePrediction;
 
 import abstracts.AbstractTest;
 import io.qameta.allure.Link;
-import org.example.pageElement.AvaxPricePrediction;
+import org.example.pageElement.AvaxPricePredictionElements;
 import org.example.utils.MyUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -22,7 +22,7 @@ public class AvaxLinkTest extends AbstractTest {
     @Link("https://docs.google.com/spreadsheets/d/1cz-FGYsjfpLtaogip9UvuRrUE50nLWkGCkXN2xP-6fE/edit?usp=sharing")
     void avaxLinkTest() throws IOException {
         try {
-            AvaxPricePrediction tapElement = new AvaxPricePrediction(getAndroidDriver());
+            AvaxPricePredictionElements tapElement = new AvaxPricePredictionElements(getAndroidDriver());
             tapElement.goToArticles();
             Thread.sleep(3000);
             tapElement.tapAvaxPricePrediction();

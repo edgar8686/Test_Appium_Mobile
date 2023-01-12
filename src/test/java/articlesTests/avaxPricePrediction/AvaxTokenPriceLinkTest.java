@@ -14,28 +14,28 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 
-public class Avax2LinkTest extends AbstractTest {
-    static Logger logger = LoggerFactory.getLogger(Avax2LinkTest.class);
+public class AvaxTokenPriceLinkTest extends AbstractTest {
+    static Logger logger = LoggerFactory.getLogger(AvaxTokenPriceLinkTest.class);
 
     @Test
-    @DisplayName("Tect№6: Articles - AVAX price prediction")
+    @DisplayName("Tect№16: Articles - AVAX price prediction")
     @Link("https://docs.google.com/spreadsheets/d/1cz-FGYsjfpLtaogip9UvuRrUE50nLWkGCkXN2xP-6fE/edit?usp=sharing")
-    void avax2LinkTest() throws IOException {
+    void avaxTokenPriceLinkTest() throws IOException {
         try {
             AvaxPricePredictionElements tapElement = new AvaxPricePredictionElements(getAndroidDriver());
             tapElement.goToArticles();
-            Thread.sleep(3000);
+            Thread.sleep(2000);
             tapElement.tapAvaxPricePrediction();
-            Thread.sleep(3000);
-            tapElement.tapAvax2();
+            Thread.sleep(2000);
+            tapElement.tapAvaxTokenPrice();
             getAndroidDriver().context("WEBVIEW_chrome");
         } catch (Exception e) {
-            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (AVAX price prediction) Avax2LinkTest- False" + System.currentTimeMillis() + ".png");
+            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (AVAX price prediction) AvaxTokenPriceLinkTest- False" + System.currentTimeMillis() + ".png");
             MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()));
-            logger.error("org.example.articlesTests (AVAX price prediction) Avax2LinkTest- False");
+            logger.error("org.example.articlesTests (AVAX price prediction) AvaxTokenPriceLinkTest- False");
         }
         Assertions.assertTrue(getAndroidDriver().getTitle().equals("AVAX/USD Chart | Live AVAX to US Dollar Price"));
         Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/avax-to-us-dollar-chart"));
-        logger.info("(AVAX price prediction) Avax2LinkTest- passed");
+        logger.info("(AVAX price prediction) AvaxTokenPriceLinkTest- passed");
     }
 }
