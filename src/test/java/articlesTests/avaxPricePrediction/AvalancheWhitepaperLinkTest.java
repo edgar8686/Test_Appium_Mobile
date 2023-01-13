@@ -31,7 +31,7 @@ public class AvalancheWhitepaperLinkTest extends AbstractTest {
             tapElement.tapAvalancheWhitepaper();
             System.out.println(getAndroidDriver().getTitle());
             System.out.println(getAndroidDriver().getCurrentUrl());
-            System.out.println(getAndroidDriver().getWindowHandle());
+            System.out.println(getAndroidDriver().getContextHandles());
             getAndroidDriver().context("WEBVIEW_chrome");
            // tapElement.tapLink();
         } catch (Exception e) {

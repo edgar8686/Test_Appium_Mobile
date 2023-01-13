@@ -191,6 +191,7 @@ public class EthereumPricePredictionElements extends AbstractPageObject {
         return this;
     }
 
+    //don't active
     public EthereumPricePredictionElements tapEthereumUpgrade() {
         TouchAction touchAction = new TouchAction(getAndroidDriver());
         touchAction
@@ -211,22 +212,17 @@ public class EthereumPricePredictionElements extends AbstractPageObject {
         TouchAction touchAction = new TouchAction(getAndroidDriver());
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         dApps.click();
@@ -237,22 +233,17 @@ public class EthereumPricePredictionElements extends AbstractPageObject {
         TouchAction touchAction = new TouchAction(getAndroidDriver());
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         deFi.click();
@@ -263,22 +254,17 @@ public class EthereumPricePredictionElements extends AbstractPageObject {
         TouchAction touchAction = new TouchAction(getAndroidDriver());
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         nfts.click();
@@ -289,22 +275,17 @@ public class EthereumPricePredictionElements extends AbstractPageObject {
         TouchAction touchAction = new TouchAction(getAndroidDriver());
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         deFiLlama.click();
@@ -315,22 +296,17 @@ public class EthereumPricePredictionElements extends AbstractPageObject {
         TouchAction touchAction = new TouchAction(getAndroidDriver());
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         etherium.click();
@@ -341,27 +317,22 @@ public class EthereumPricePredictionElements extends AbstractPageObject {
         TouchAction touchAction = new TouchAction(getAndroidDriver());
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 400))
                 .release()
                 .perform();
         seesThePotential.click();
@@ -372,27 +343,22 @@ public class EthereumPricePredictionElements extends AbstractPageObject {
         TouchAction touchAction = new TouchAction(getAndroidDriver());
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 400))
                 .release()
                 .perform();
         bitcoins.click();
