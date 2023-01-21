@@ -1,4 +1,4 @@
-package org.example.pageElement;
+package org.example.pageElements;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
@@ -7,7 +7,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
-import org.example.abstractClasses.AbstractPageObject;
+import org.example.abstractClass.AbstractPageObject;
 import org.openqa.selenium.InvalidSelectorException;
 
 import java.time.Duration;
@@ -369,32 +369,27 @@ public class EthereumPricePredictionElements extends AbstractPageObject {
         TouchAction touchAction = new TouchAction(getAndroidDriver());
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 300))
                 .release()
                 .perform();
         us500.click();
@@ -405,37 +400,32 @@ public class EthereumPricePredictionElements extends AbstractPageObject {
         TouchAction touchAction = new TouchAction(getAndroidDriver());
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 200))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 200))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 200))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 100))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 100))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
+                .moveTo(PointOption.point(620, 100))
                 .release()
                 .perform();
         ethCoinPrice.click();
@@ -444,28 +434,49 @@ public class EthereumPricePredictionElements extends AbstractPageObject {
 
     public EthereumPricePredictionElements tapEthereumCoinsPrice() throws InvalidSelectorException {
         getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
-                "new UiScrollable(new UiSelector().scrollable(true)).flingToEnd(5)"));
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
+        getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
+        getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
         ethereumCoinsPrice.click();
         return this;
     }
 
-    public EthereumPricePredictionElements tapCryptocurrencyPrices() throws InvalidSelectorException {
+    public EthereumPricePredictionElements tapCryptocurrencyPrices() throws Exception {
+        TouchAction touchAction = new TouchAction(getAndroidDriver());
         getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
-                "new UiScrollable(new UiSelector().scrollable(true)).flingToEnd(5)"));
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
+        getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
+        getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
+        Thread.sleep(2000);
+        touchAction
+                .tap(PointOption.point(1125, 850))
+                .perform();
         cryptocurrencyPrices.click();
         return this;
     }
 
     public EthereumPricePredictionElements tapStockMarket() throws InvalidSelectorException {
         getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
-                "new UiScrollable(new UiSelector().scrollable(true)).flingToEnd(5)"));
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
+        getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
+        getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
         stockMarket.click();
         return this;
     }
 
     public EthereumPricePredictionElements tapEtherPrice() throws InvalidSelectorException {
         getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
-                "new UiScrollable(new UiSelector().scrollable(true)).flingToEnd(5)"));
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
+        getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
+        getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
         etherPrice.click();
         return this;
     }

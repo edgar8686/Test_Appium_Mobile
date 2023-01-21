@@ -14,28 +14,28 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 
-public class LiquidityPoolLinkTest extends AbstractTest {
-    static Logger logger = LoggerFactory.getLogger(LiquidityPoolLinkTest.class);
+public class US500LinkTest extends AbstractTest {
+    static Logger logger = LoggerFactory.getLogger(US500LinkTest.class);
 
     @Test
-    @DisplayName("Tect№4: Articles - Ethereum price prediction")
+    @DisplayName("Tect№19: Articles - Ethereum price prediction")
     @Link("https://docs.google.com/spreadsheets/d/1cz-FGYsjfpLtaogip9UvuRrUE50nLWkGCkXN2xP-6fE/edit?usp=sharing")
-    void liquidityPoolLinkTest() throws IOException {
+    void us500() throws IOException {
         try {
             EthereumPricePredictionElements tapElement = new EthereumPricePredictionElements(getAndroidDriver());
             tapElement.goToArticles();
             Thread.sleep(2000);
             tapElement.tapEthereumPricePrediction();
-            Thread.sleep(2000);
-            tapElement.tapLiquidityPool();
+            Thread.sleep(3000);
+            tapElement.tapUS500();
             getAndroidDriver().context("WEBVIEW_chrome");
         } catch (Exception e) {
-            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Ethereum price prediction) LiquidityPoolLinkTest- False" + System.currentTimeMillis() + ".png");
+            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Ethereum price prediction) US500- False" + System.currentTimeMillis() + ".png");
             MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()));
-            logger.error("org.example.articlesTests (Ethereum price prediction) LiquidityPoolLinkTest- False");
+            logger.error("org.example.articlesTests (Ethereum price prediction) US500- False");
         }
-        Assertions.assertTrue(getAndroidDriver().getTitle().equals("Liquidity pool | Definition and Meaning | Capital.com"));
-        Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/liquidity-pool-definition"));
-        logger.info("(Ethereum price prediction) LiquidityPoolLinkTest- passed");
+        Assertions.assertTrue(getAndroidDriver().getTitle().equals("US 500 (S&P) Live Chart | US500 Index Price"));
+        Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/sp-500-index"));
+        logger.info("(Ethereum price prediction) US500- passed");
     }
 }

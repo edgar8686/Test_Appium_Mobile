@@ -1,207 +1,299 @@
-package org.example.pageElement;
+package org.example.pageElements;
 
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.touch.offset.PointOption;
-import org.example.abstractClasses.AbstractPageObject;
+import org.example.abstractClass.AbstractPageObject;
+import org.openqa.selenium.InvalidSelectorException;
 
-public class ArticlesElements extends AbstractPageObject {
-
+public class AvaxPricePredictionElements extends AbstractPageObject {
     @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Welcome to Crypto Investmate — become a part of the crypto world!\"]/android.widget.ImageView[1]")
     private MobileElement exit;
     @AndroidFindBy(accessibility = "Articles\n" +
             "Tab 2 of 4")
     private MobileElement articles;
-    @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"Shiba inu price prediction: Can the meme coin stop the slide?\n" +
+    @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"AVAX price prediction: Will Avalanche fall further?\n" +
             "crypto\n" +
-            "May 09, 2022  12:07\"]")
-    private MobileElement shibaInuPrice;
-    @AndroidFindBy(accessibility = "SHIB")
-    private MobileElement shib;
-    @AndroidFindBy(accessibility = "DOGE")
-    private MobileElement doge;
-    @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"Robinhood listed the coin\"]")
-    private MobileElement listedRobinhood;
-    @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"Shiba inu\"]")
-    private MobileElement shibaInu;
-    @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"bitcoin (BTC)\"]")
-    private MobileElement bitcoinBtc;
-    @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"NFT\"]")
-    private MobileElement nft;
-    @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"SHIB coin price\"]")
-    private MobileElement shibCoinPrice;
-    @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"decentralised autonomous organisation\"]")
-    private MobileElement dao;
-    @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"SHIB\"]")
-    private MobileElement shib2;
-    @AndroidFindBy(xpath = "(//android.widget.Button[@content-desc=\"SHIB\"])[1]")
-    private MobileElement shib3;
-    @AndroidFindBy(xpath = "(//android.widget.Button[@content-desc=\"SHIB\"])[2]")
-    private MobileElement shib4;
-    @AndroidFindBy(accessibility = "CRO price prediction: Will the Crypto.com token rebound?\n" +
-            "crypto\n" +
-            "May 12, 2022  15:55")
-    private MobileElement croPrice;
-    @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"CRO\"]")
-    private MobileElement cro;
-
-    @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"CRO\"][2]")
-    private MobileElement cro2;
-    @AndroidFindBy(accessibility = "decentralised finance (DeFi),")
+            "May 13, 2022  10:22\"]")
+    private MobileElement avaxPricePrediction;
+    @AndroidFindBy(accessibility = "AVAX")
+    private MobileElement avax;
+    @AndroidFindBy(accessibility = "BTC")
+    private MobileElement btc;
+    @AndroidFindBy(accessibility = "blockchain")
+    private MobileElement blockchain;
+    @AndroidFindBy(accessibility = "Smart contract")
+    private MobileElement smartContract;
+    @AndroidFindBy(accessibility = "DeFi")
     private MobileElement deFi;
-    @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"Web3\"]")
-    private MobileElement web3;
-    @AndroidFindBy(accessibility = "non-fungible token (NFT)")
-    private MobileElement nonFungibleToken;
-    @AndroidFindBy(accessibility = "Crypto.com whitepaper")
-    private MobileElement whitepaper;
+    @AndroidFindBy(accessibility = "SOL")
+    private MobileElement sol;
+    @AndroidFindBy(accessibility = "ETH")
+    private MobileElement ethereum;
+    @AndroidFindBy(accessibility = "gas fees")
+    private MobileElement gasFees;
+    @AndroidFindBy(accessibility = "Avalanche’s whitepaper")
+    private MobileElement avalancheWhitepaper;
+    @AndroidFindBy(accessibility = "PoS")
+    private MobileElement pos;
+    //AVAX3
     @AndroidFindBy(accessibility = "staking")
     private MobileElement staking;
-    @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"CRO\"]")
-    private MobileElement cro3;
-    @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"technical analysis\"]")
-    private MobileElement technicalAnalysis;
-    @AndroidFindBy(accessibility = "Relative Strength Index (RSI)")
-    private MobileElement relativeStrengthIndex;
-    @AndroidFindBy(accessibility = "moving averages")
-    private MobileElement movingAverages;
-    @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"CRO\"]")
-    private MobileElement cro4;
-    @AndroidFindBy(accessibility = "announced")
-    private MobileElement announced;
-    @AndroidFindBy(accessibility = "mainnet")
-    private MobileElement mainnet;
-    @AndroidFindBy(accessibility = "@cronos_chain")
-    private MobileElement cronosChain;
-    @AndroidFindBy(accessibility = "CRO/USD")
-    private MobileElement croUsd;
-    //
+    //AVAX4
+    @AndroidFindBy(accessibility = "web3")
+    private MobileElement web3;
+    @AndroidFindBy(accessibility = "AVAX token price")
+    private MobileElement avaxTokenPrice;
+    @AndroidFindBy(id = "com.android.chrome:id/infobar_message")
+    private MobileElement link;
 
-
-    public ArticlesElements(AndroidDriver driver) {
+    public AvaxPricePredictionElements(AndroidDriver driver) {
         super(driver);
-    }
-
-    public ArticlesElements tapExit() {
-        exit.click();
-        return this;
-    }
-
-    public ArticlesElements tapArticles() {
-        articles.click();
-        return this;
-    }
-
-    public ArticlesElements tapShibaInuPrice() {
-        shibaInuPrice.click();
-        return this;
-    }
-
-    public ArticlesElements tapShibLink() {
-        shib.click();
-        return this;
     }
 
     public void goToArticles() throws Exception {
         exit.click();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         articles.click();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
     }
 
-    public ArticlesElements tapDoge() {
-        doge.click();
+    public AvaxPricePredictionElements tapAvaxPricePrediction() {
+        avaxPricePrediction.click();
         return this;
     }
 
-    public ArticlesElements tapListedRobinhoodLink() {
-        listedRobinhood.click();
+    public AvaxPricePredictionElements tapAvax() {
+        avax.click();
         return this;
     }
 
-    public ArticlesElements tapShibaInu() {
-        shibaInu.click();
+    public AvaxPricePredictionElements tapBtc() {
+        btc.click();
         return this;
     }
 
-    public ArticlesElements tapBitcoinBtc() {
-        bitcoinBtc.click();
+    public AvaxPricePredictionElements tapBlockchain() {
+        TouchAction touchAction = new TouchAction(getAndroidDriver());
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        blockchain.click();
         return this;
     }
 
-    public ArticlesElements tapNft() {
-        nft.click();
+    public AvaxPricePredictionElements tapSmartContract() {
+        TouchAction touchAction = new TouchAction(getAndroidDriver());
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        smartContract.click();
         return this;
     }
 
-    public ArticlesElements tapShibCoinPrice() {
-        shibCoinPrice.click();
-        return this;
-    }
-
-    public ArticlesElements tapDao() {
-        dao.click();
-        return this;
-    }
-
-    public ArticlesElements tapShib2() {
-        shib2.click();
-        return this;
-    }
-
-    public ArticlesElements tapShib3() {
-        shib3.click();
-        return this;
-    }
-
-    public ArticlesElements tapShib4() {
-        shib4.click();
-        return this;
-    }
-
-    public ArticlesElements tapCroPrice() {
-        croPrice.click();
-        return this;
-    }
-
-    public ArticlesElements tapCro() {
-        cro.click();
-        return this;
-    }
-
-    public ArticlesElements tapCro2() {
-        cro.click();
-        return this;
-    }
-
-    public ArticlesElements tapDeFi() {
+    public AvaxPricePredictionElements tapDeFi() {
+        TouchAction touchAction = new TouchAction(getAndroidDriver());
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
         deFi.click();
         return this;
     }
 
-    public ArticlesElements tapWeb3() {
-        web3.click();
+    public AvaxPricePredictionElements tapSol() {
+        TouchAction touchAction = new TouchAction(getAndroidDriver());
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        sol.click();
         return this;
     }
 
-    public ArticlesElements tapNonFungibleToken() {
-        nonFungibleToken.click();
+    public AvaxPricePredictionElements tapEthereum() {
+        TouchAction touchAction = new TouchAction(getAndroidDriver());
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        ethereum.click();
         return this;
     }
 
-    public ArticlesElements tapWhitepaper() {
-        whitepaper.click();
+    public AvaxPricePredictionElements tapGasFees() {
+        TouchAction touchAction = new TouchAction(getAndroidDriver());
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        gasFees.click();
         return this;
     }
 
-    public ArticlesElements tapStaking() {
+    public AvaxPricePredictionElements tapAvax2() {
+        TouchAction touchAction = new TouchAction(getAndroidDriver());
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        avax.click();
+        return this;
+    }
+
+    public AvaxPricePredictionElements tapAvalancheWhitepaper() throws InvalidSelectorException {
+        TouchAction touchAction = new TouchAction(getAndroidDriver());
+        getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(true)).scrollForward()"));
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+
+        //getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+        //     "new UiScrollable(new UiSelector().scrollable(true)).flingForward()"));
+        avalancheWhitepaper.click();
+        return this;
+    }
+
+    public AvaxPricePredictionElements tapPos() {
+        TouchAction touchAction = new TouchAction(getAndroidDriver());
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        pos.click();
+        return this;
+    }
+
+    public AvaxPricePredictionElements tapAvax3() {
+        TouchAction touchAction = new TouchAction(getAndroidDriver());
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        avax.click();
+        return this;
+    }
+
+    public AvaxPricePredictionElements tapAvax4() {
+        TouchAction touchAction = new TouchAction(getAndroidDriver());
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        avax.click();
+        return this;
+    }
+
+    public AvaxPricePredictionElements tapStaking() {
+        TouchAction touchAction = new TouchAction(getAndroidDriver());
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
         staking.click();
         return this;
     }
 
-    public ArticlesElements tapCro3() {
+    public AvaxPricePredictionElements tapWeb3() {
         TouchAction touchAction = new TouchAction(getAndroidDriver());
         touchAction
                 .press(PointOption.point(620, 2400))
@@ -218,11 +310,41 @@ public class ArticlesElements extends AbstractPageObject {
                 .moveTo(PointOption.point(620, 600))
                 .release()
                 .perform();
-        cro3.click();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        web3.click();
         return this;
     }
 
-    public ArticlesElements tapTechnicalAnalysis() {
+    public AvaxPricePredictionElements tapAvaxTokenPrice() throws InvalidSelectorException {
         TouchAction touchAction = new TouchAction(getAndroidDriver());
         touchAction
                 .press(PointOption.point(620, 2400))
@@ -241,277 +363,45 @@ public class ArticlesElements extends AbstractPageObject {
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 500))
+                .moveTo(PointOption.point(620, 600))
                 .release()
                 .perform();
         touchAction
                 .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 500))
+                .moveTo(PointOption.point(620, 600))
                 .release()
                 .perform();
-        technicalAnalysis.click();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        touchAction
+                .press(PointOption.point(620, 2400))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
+        avaxTokenPrice.click();
         return this;
     }
 
-    public ArticlesElements tapRelativeStrengthIndex() {
-        TouchAction touchAction = new TouchAction(getAndroidDriver());
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 500))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 500))
-                .release()
-                .perform();
-        relativeStrengthIndex.click();
-        return this;
-    }
-
-    public ArticlesElements tapMovingAverages() {
-        TouchAction touchAction = new TouchAction(getAndroidDriver());
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 500))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 500))
-                .release()
-                .perform();
-        movingAverages.click();
-        return this;
-    }
-
-    public ArticlesElements tapCro4() {
-        TouchAction touchAction = new TouchAction(getAndroidDriver());
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 500))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 500))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 800))
-                .release()
-                .perform();
-        cro4.click();
-        return this;
-    }
-
-    public ArticlesElements tapAnnounced() {
-        TouchAction touchAction = new TouchAction(getAndroidDriver());
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 500))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 500))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        announced.click();
-        return this;
-    }
-
-    public ArticlesElements tapMainnet() {
-        TouchAction touchAction = new TouchAction(getAndroidDriver());
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 500))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 500))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2000))
-                .moveTo(PointOption.point(620, 800))
-                .release()
-                .perform();
-        mainnet.click();
-        return this;
-    }
-
-    public ArticlesElements tapCronosChain() {
-        TouchAction touchAction = new TouchAction(getAndroidDriver());
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 500))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 500))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2000))
-                .moveTo(PointOption.point(620, 800))
-                .release()
-                .perform();
-        cronosChain.click();
-        return this;
-    }
-
-    public ArticlesElements tapCroUsd() {
-        TouchAction touchAction = new TouchAction(getAndroidDriver());
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 600))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 400))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 500))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 500))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 400))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 400))
-                .release()
-                .perform();
-        touchAction
-                .press(PointOption.point(620, 2400))
-                .moveTo(PointOption.point(620, 400))
-                .release()
-                .perform();
-        croUsd.click();
+    public AvaxPricePredictionElements tapLink() {
+        link.click();
         return this;
     }
 

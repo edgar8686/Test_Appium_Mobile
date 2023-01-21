@@ -17,14 +17,14 @@
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="id репозитория" />
-      <option name="name" value="id репозитория" />
-      <option name="url" value="https://maven.google.com/" />
-    </remote-repository>
-    <remote-repository>
       <option name="id" value="google.com" />
       <option name="name" value="google.com" />
       <option name="url" value="https://maven.google.com" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="id репозитория" />
+      <option name="name" value="id репозитория" />
+      <option name="url" value="https://maven.google.com/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="https://mvnrepository.com/artifact/androidx.appcompat/appcompat" />

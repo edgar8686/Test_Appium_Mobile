@@ -1,10 +1,10 @@
 package articlesTests.croPricePrediction;
 
-import abstracts.AbstractTest;
+import abstractSetting.AbstractTest;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
 import io.qameta.allure.Link;
-import org.example.pageElement.ArticlesElements;
+import org.example.pageElements.ArticlesElements;
 import org.example.utils.MyUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

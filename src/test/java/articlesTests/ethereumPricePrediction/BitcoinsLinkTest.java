@@ -1,8 +1,8 @@
 package articlesTests.ethereumPricePrediction;
 
-import abstracts.AbstractTest;
+import abstractSetting.AbstractTest;
 import io.qameta.allure.Link;
-import org.example.pageElement.EthereumPricePredictionElements;
+import org.example.pageElements.EthereumPricePredictionElements;
 import org.example.utils.MyUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -29,8 +29,6 @@ public class BitcoinsLinkTest extends AbstractTest {
             Thread.sleep(3000);
             tapElement.tapBitcoins();
             getAndroidDriver().context("WEBVIEW_chrome");
-            System.out.println(getAndroidDriver().getTitle());
-            System.out.println(getAndroidDriver().getCurrentUrl());
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Ethereum price prediction) BitcoinsLinkTest- False" + System.currentTimeMillis() + ".png");
             MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()));

@@ -1,4 +1,4 @@
-package abstracts;
+package abstractSetting;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -19,7 +19,7 @@ public abstract class AbstractTest {
         DesiredCapabilities dc = new DesiredCapabilities();
         dc.setCapability("platformName", "Android");
         dc.setCapability("platformVersion", "12");
-        dc.setCapability("deviceName", "sdk_gphone64_x86_64");
+        dc.setCapability("deviceName", "emulator-5554");
         dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UIAutomator2");
         dc.setCapability("app", "C:\\Users\\edgar\\AndroidStudioProjects\\MyApplication\\app\\src\\main\\res\\xml\\Crypto Academy.apk");
         dc.setCapability("chromedriverDisableBuildCheck", "true");

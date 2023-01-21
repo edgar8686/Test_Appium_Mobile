@@ -1,4 +1,4 @@
-package org.example.abstractClasses;
+package org.example.abstractClass;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;

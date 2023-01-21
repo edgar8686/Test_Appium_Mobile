@@ -1,8 +1,8 @@
 package articlesTests.avaxPricePrediction;
 
-import abstracts.AbstractTest;
+import abstractSetting.AbstractTest;
 import io.qameta.allure.Link;
-import org.example.pageElement.AvaxPricePredictionElements;
+import org.example.pageElements.AvaxPricePredictionElements;
 import org.example.utils.MyUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
