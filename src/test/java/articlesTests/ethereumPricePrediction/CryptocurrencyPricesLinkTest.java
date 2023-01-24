@@ -29,15 +29,14 @@ public class CryptocurrencyPricesLinkTest extends AbstractTest {
             Thread.sleep(3000);
             tapElement.tapCryptocurrencyPrices();
             getAndroidDriver().context("WEBVIEW_chrome");
-            System.out.println(getAndroidDriver().getTitle());
-            System.out.println(getAndroidDriver().getCurrentUrl());
+            getAndroidDriver().getWindowHandle();
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Ethereum price prediction) CryptocurrencyPricesLinkTest- False" + System.currentTimeMillis() + ".png");
             MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()));
             logger.error("org.example.articlesTests (Ethereum price prediction) CryptocurrencyPricesLinkTest- False");
         }
-        Assertions.assertTrue(getAndroidDriver().getTitle().equals("ETH/USD Chart | Live Ethereum to US Dollar Price"));
-        Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/eth-usd-chart"));
+        Assertions.assertTrue(getAndroidDriver().getTitle().equals("Crypto CFDs Trading | Live Cryptocurrency Prices | Capital.com"));
+        Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/live-cryptocurrency-prices"));
         logger.info("(Ethereum price prediction) CryptocurrencyPricesLinkTest- passed");
     }
 }

@@ -17,7 +17,7 @@ public class GoTo extends AbstractPageObject {
     public GoTo(AndroidDriver driver) {
         super(driver);
     }
-    public static void goToArticles() throws Exception {
+    public void goToArticles() throws Exception {
         exit.click();
         Thread.sleep(2000);
         articles.click();

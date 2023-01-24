@@ -66,7 +66,6 @@ public class AmazonStockForecastElements extends AbstractPageObject {
                 .press(PointOption.point(620,2000))
                 .waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000)))
                 .moveTo(PointOption.point(620,800))
-                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000)))
                 .release()
                 .perform();
         amazonStockForecast.click();

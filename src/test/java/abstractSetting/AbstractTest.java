@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class AbstractTest {
     private static AndroidDriver androidDriver;
@@ -35,8 +37,13 @@ public abstract class AbstractTest {
 
     @AfterEach
     public void closeWeb() {
+        List<String> windowHandles = new ArrayList<>(getAndroidDriver().getWindowHandles());
         androidDriver.manage().deleteAllCookies();
-        if (androidDriver != null) {
+        if (windowHandles.size() > 1 && androidDriver != null) {
+            for (int i = 0; i < windowHandles.size(); i++) {
+                androidDriver.switchTo().window(windowHandles.get(i)).close();
+            }
+        } else if (androidDriver != null) {
             androidDriver.close();
         }
     }
