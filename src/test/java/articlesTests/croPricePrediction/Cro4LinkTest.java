@@ -1,7 +1,7 @@
 package articlesTests.croPricePrediction;
 
 import abstractSetting.AbstractTest;
-import io.qameta.allure.Link;
+import io.qameta.allure.*;
 import org.example.pageElements.ArticlesElements;
 import org.example.utils.MyUtils;
 import org.junit.jupiter.api.Assertions;
@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -17,9 +18,12 @@ import java.nio.file.Files;
 public class Cro4LinkTest extends AbstractTest {
     static Logger logger = LoggerFactory.getLogger(Cro4LinkTest.class);
 
-    @Test
-    @DisplayName("Tect№12: Articles - CRO price prediction")
+    @Epic("Articles")
+    @Feature("CRO price prediction: Will the Crypto.com token rebound?")
+    @DisplayName("Test№12")
+    @Severity(SeverityLevel.CRITICAL)
     @Link("https://docs.google.com/spreadsheets/d/1cz-FGYsjfpLtaogip9UvuRrUE50nLWkGCkXN2xP-6fE/edit?usp=sharing")
+    @Test
     void cro4LinkTest() throws IOException {
         try {
             ArticlesElements tapElement = new ArticlesElements(getAndroidDriver());
@@ -32,7 +36,7 @@ public class Cro4LinkTest extends AbstractTest {
             Thread.sleep(1000);
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (CRO price prediction) Cro4LinkTest- False" + System.currentTimeMillis() + ".png");
-            MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()));
+            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
             logger.error("org.example.articlesTests (CRO price prediction) Cro4LinkTest- False");
         }
         Assertions.assertTrue(getAndroidDriver().getTitle().equals("CRO/USD Chart | Live Crypto.com Coin to US Dollar Price"));

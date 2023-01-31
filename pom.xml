@@ -121,6 +121,11 @@
             <artifactId>java-client</artifactId>
             <version>7.5.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-resources-plugin</artifactId>
+            <version>3.3.0</version>
+        </dependency>
 
     </dependencies>
 
@@ -166,6 +171,31 @@
 
                     <buildDirectory>C:\Users\edgar\IdeaProjects\Test_Appium_Mobile\target</buildDirectory>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>C:\Users\edgar\IdeaProjects\Test_Appium_Mobile\target\allure-results</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>C:\Users\edgar\IdeaProjects\Test_Appium_Mobile\src\main\resources</directory>
+                                    <includes>
+                                        <include>environment.properties</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

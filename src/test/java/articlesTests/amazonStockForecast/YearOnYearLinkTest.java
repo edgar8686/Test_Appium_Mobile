@@ -16,33 +16,36 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 
-public class AmazonLinkTest extends AbstractTest {
-    static Logger logger = LoggerFactory.getLogger(AmazonLinkTest.class);
+public class YearOnYearLinkTest extends AbstractTest {
+    static Logger logger = LoggerFactory.getLogger(YearOnYearLinkTest.class);
 
     @Epic("Articles")
     @Feature("Amazon stock forecast for 2022: Should you buy the dip?")
-    @DisplayName("Test№1")
+    @DisplayName("Test№5")
     @Severity(SeverityLevel.CRITICAL)
     @Link("https://docs.google.com/spreadsheets/d/1cz-FGYsjfpLtaogip9UvuRrUE50nLWkGCkXN2xP-6fE/edit?usp=sharing")
     @Test
-    void amazonLinkTest() throws IOException {
+    void yearOnYearLinkTest() throws IOException {
         try {
             AmazonStockForecastElements tapElement = new AmazonStockForecastElements(getAndroidDriver());
             new GoTo(getAndroidDriver())
                     .goToArticles();
             Thread.sleep(2000);
             tapElement.tapAmazonStockForecast();
+            System.out.println();
             Thread.sleep(3000);
-            tapElement.tapAmazon();
+            tapElement.tapYearOnYear();
             getAndroidDriver().context("WEBVIEW_chrome");
             getAndroidDriver().getWindowHandle();
+            System.out.println(getAndroidDriver().getTitle());
+            System.out.println(getAndroidDriver().getCurrentUrl());
         } catch (Exception e) {
-            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonLinkTest- False" + System.currentTimeMillis() + ".png");
+            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) YearOnYearLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
-            logger.error("org.example.articlesTests (Amazon stock forecast for 2022) AmazonLinkTest- False");
+            logger.error("org.example.articlesTests (Amazon stock forecast for 2022) YearOnYearLinkTest- False");
         }
-        Assertions.assertTrue(getAndroidDriver().getTitle().equals("Amazon.com Inc (AMZN) Stock Price & Chart | Trade Now"));
-        Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/amazon-share-price"));
-        logger.info("(Amazon stock forecast for 2022) AmazonLinkTest- passed");
+        Assertions.assertTrue(getAndroidDriver().getTitle().equals("Year-over-year (YOY) | Definition and Meaning | Capital.com"));
+        Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/year-over-year-definition"));
+        logger.info("(Amazon stock forecast for 2022) YearOnYearLinkTest- passed");
     }
 }

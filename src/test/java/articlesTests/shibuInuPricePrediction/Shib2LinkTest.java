@@ -3,7 +3,7 @@ package articlesTests.shibuInuPricePrediction;
 import abstractSetting.AbstractTest;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
-import io.qameta.allure.Link;
+import io.qameta.allure.*;
 import org.example.pageElements.ArticlesElements;
 import org.example.utils.MyUtils;
 import org.junit.jupiter.api.Assertions;
@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -19,9 +20,12 @@ import java.nio.file.Files;
 public class Shib2LinkTest extends AbstractTest {
     static Logger logger = LoggerFactory.getLogger(Shib2LinkTest.class);
 
-    @Test
-    @DisplayName("Tect№9: Articles - Shibu inu price prediction")
+    @Epic("Articles")
+    @Feature("Shiba inu price prediction: Can the meme coin stop the slide?")
+    @DisplayName("Test№12")
+    @Severity(SeverityLevel.CRITICAL)
     @Link("https://docs.google.com/spreadsheets/d/1cz-FGYsjfpLtaogip9UvuRrUE50nLWkGCkXN2xP-6fE/edit?usp=sharing")
+    @Test
     void shib2LinkTest() throws IOException {
         try {
             TouchAction touchAction = new TouchAction(getAndroidDriver());
@@ -76,7 +80,7 @@ public class Shib2LinkTest extends AbstractTest {
             Thread.sleep(1000);
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Shibu inu price prediction)  Shib2LinkTest- False" + System.currentTimeMillis() + ".png");
-            MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()));
+            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
             getAndroidDriver().close();
             logger.error("org.example.articlesTests (Shibu inu price prediction) Shib2LinkTest- False");
         }

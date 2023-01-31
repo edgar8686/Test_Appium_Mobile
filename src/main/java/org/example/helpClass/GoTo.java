@@ -11,7 +11,9 @@ public class GoTo extends AbstractPageObject {
     @AndroidFindBy(accessibility = "Articles\n" +
             "Tab 2 of 4")
     private static MobileElement articles;
-
+    @AndroidFindBy(accessibility = "Glossary\n" +
+            "Tab 3 of 4")
+    private static MobileElement glossary;
 
 
     public GoTo(AndroidDriver driver) {
@@ -21,6 +23,12 @@ public class GoTo extends AbstractPageObject {
         exit.click();
         Thread.sleep(2000);
         articles.click();
+        Thread.sleep(2000);
+    }
+    public void goToGlossary() throws Exception {
+        exit.click();
+        Thread.sleep(2000);
+        glossary.click();
         Thread.sleep(2000);
     }
 }

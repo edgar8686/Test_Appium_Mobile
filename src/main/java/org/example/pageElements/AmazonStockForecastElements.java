@@ -7,6 +7,8 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.example.abstractClass.AbstractPageObject;
+import org.example.helpClass.Swipe;
+import org.example.myEnum.Side;
 
 import java.time.Duration;
 
@@ -57,112 +59,151 @@ public class AmazonStockForecastElements extends AbstractPageObject {
     private MobileElement amazon3;
     @AndroidFindBy(accessibility = "stock")
     private MobileElement stock;
+
+    Swipe swipe = new Swipe(getAndroidDriver());
+
     public AmazonStockForecastElements(AndroidDriver driver) {
         super(driver);
     }
+
+
     public AmazonStockForecastElements tapAmazonStockForecast() {
         TouchAction touchAction = new TouchAction(getAndroidDriver());
         touchAction
-                .press(PointOption.point(620,2000))
+                .press(PointOption.point(620, 2000))
                 .waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000)))
-                .moveTo(PointOption.point(620,800))
+                .moveTo(PointOption.point(620, 800))
                 .release()
                 .perform();
         amazonStockForecast.click();
         return this;
     }
+
     public AmazonStockForecastElements tapAmazon() {
         amazon.click();
         return this;
     }
+
     public AmazonStockForecastElements tapAnnouncing() {
         announcing.click();
         return this;
     }
+
     public AmazonStockForecastElements tapRivn() {
         rivn.click();
         return this;
     }
+
     public AmazonStockForecastElements tapRivn2() {
+        Swipe swipe = new Swipe(getAndroidDriver());
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
         rivn.click();
         return this;
     }
+
     public AmazonStockForecastElements tapYearOnYear() {
+        Swipe swipe = new Swipe(getAndroidDriver());
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
         yearOnYear.click();
         return this;
     }
+
     public AmazonStockForecastElements tapFiledStatement() {
+        Swipe swipe = new Swipe(getAndroidDriver());
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP);
         filedStatement.click();
         return this;
     }
+
     public AmazonStockForecastElements tapSec() {
         sec.click();
         return this;
     }
+
     public AmazonStockForecastElements tapSplit() {
         split.click();
         return this;
     }
+
     public AmazonStockForecastElements tapDotcom() {
         dotcom.click();
         return this;
     }
+
     public AmazonStockForecastElements tapTradingOfAmazonShares() {
         tradingOfAmazonShares.click();
         return this;
     }
+
     public AmazonStockForecastElements tapBuyBackShares() {
         buyBackShares.click();
         return this;
     }
+
     public AmazonStockForecastElements tapGoogle() {
         google.click();
         return this;
     }
+
     public AmazonStockForecastElements tapApple() {
         apple.click();
         return this;
     }
+
     public AmazonStockForecastElements tapTesla() {
         tesla.click();
         return this;
     }
+
     public AmazonStockForecastElements tapAmazonShareValue() {
         amazonShareValue.click();
         return this;
     }
+
     public AmazonStockForecastElements tapNoted() {
         noted.click();
         return this;
     }
+
     public AmazonStockForecastElements tapAmazon1() {
         amazon1.click();
         return this;
     }
+
     public AmazonStockForecastElements tapAmazon2() {
         amazon2.click();
         return this;
     }
+
     public AmazonStockForecastElements tapMA() {
         mas.click();
         return this;
     }
+
     public AmazonStockForecastElements tapRSI() {
         rsi.click();
         return this;
     }
+
     public AmazonStockForecastElements tapAmazon3() {
         amazon1.click();
         return this;
     }
+
     public AmazonStockForecastElements tapAmazon4() {
         amazon2.click();
         return this;
     }
+
     public AmazonStockForecastElements tapAmazon5() {
         amazon3.click();
         return this;
     }
+
     public AmazonStockForecastElements tapStock() {
         stock.click();
         return this;

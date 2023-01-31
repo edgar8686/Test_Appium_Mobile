@@ -11,7 +11,7 @@ import java.io.IOException;
 public class MyUtils {
     public static File makeScreenshot(WebDriver driver, String filename) {
         File temp = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        File destination = new File("./target/" + filename);
+        File destination = new File("./target/allure-results" + filename);
         try {
             FileUtils.copyFile(temp, destination);
         } catch (IOException exception) {
