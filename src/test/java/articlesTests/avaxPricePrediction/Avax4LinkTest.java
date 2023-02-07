@@ -33,6 +33,7 @@ public class Avax4LinkTest extends AbstractTest {
             Thread.sleep(3000);
             tapElement.tapAvax4();
             getAndroidDriver().context("WEBVIEW_chrome");
+            getAndroidDriver().getWindowHandle();
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (AVAX price prediction) Avax4LinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));

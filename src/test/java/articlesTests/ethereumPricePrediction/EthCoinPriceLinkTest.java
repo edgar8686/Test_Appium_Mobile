@@ -33,6 +33,7 @@ public class EthCoinPriceLinkTest extends AbstractTest {
             Thread.sleep(3000);
             tapElement.tapEthCoinPrice();
             getAndroidDriver().context("WEBVIEW_chrome");
+            getAndroidDriver().getWindowHandle();
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Ethereum price prediction) EthCoinPrice- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));

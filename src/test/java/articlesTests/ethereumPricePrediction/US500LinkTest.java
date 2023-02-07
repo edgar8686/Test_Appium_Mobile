@@ -33,6 +33,7 @@ public class US500LinkTest extends AbstractTest {
             Thread.sleep(3000);
             tapElement.tapUS500();
             getAndroidDriver().context("WEBVIEW_chrome");
+            getAndroidDriver().getWindowHandle();
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Ethereum price prediction) US500- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));

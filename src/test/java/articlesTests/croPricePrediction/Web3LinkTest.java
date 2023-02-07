@@ -42,6 +42,7 @@ public class Web3LinkTest extends AbstractTest {
 
             tapElement.tapWeb3();
             getAndroidDriver().context("WEBVIEW_chrome");
+            getAndroidDriver().getWindowHandle();
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (CRO price prediction)  Web3LinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));

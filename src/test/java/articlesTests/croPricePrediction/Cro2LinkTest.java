@@ -41,9 +41,8 @@ public class Cro2LinkTest extends AbstractTest {
                     .perform();
 
             tapElement.tapCro2();
-            Thread.sleep(1000);
             getAndroidDriver().context("WEBVIEW_chrome");
-            Thread.sleep(1000);
+            getAndroidDriver().getWindowHandle();
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (CRO price prediction)  Cro2LinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));

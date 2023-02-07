@@ -33,6 +33,7 @@ public class LiquidityPoolLinkTest extends AbstractTest {
             Thread.sleep(2000);
             tapElement.tapLiquidityPool();
             getAndroidDriver().context("WEBVIEW_chrome");
+            getAndroidDriver().getWindowHandle();
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Ethereum price prediction) LiquidityPoolLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));

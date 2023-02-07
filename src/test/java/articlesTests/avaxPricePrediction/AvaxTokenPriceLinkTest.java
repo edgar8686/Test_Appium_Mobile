@@ -33,6 +33,7 @@ public class AvaxTokenPriceLinkTest extends AbstractTest {
             Thread.sleep(2000);
             tapElement.tapAvaxTokenPrice();
             getAndroidDriver().context("WEBVIEW_chrome");
+            getAndroidDriver().getWindowHandle();
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (AVAX price prediction) AvaxTokenPriceLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));

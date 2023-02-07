@@ -37,8 +37,6 @@ public class YearOnYearLinkTest extends AbstractTest {
             tapElement.tapYearOnYear();
             getAndroidDriver().context("WEBVIEW_chrome");
             getAndroidDriver().getWindowHandle();
-            System.out.println(getAndroidDriver().getTitle());
-            System.out.println(getAndroidDriver().getCurrentUrl());
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) YearOnYearLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));

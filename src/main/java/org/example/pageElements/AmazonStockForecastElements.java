@@ -1,16 +1,11 @@
 package org.example.pageElements;
 
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.touch.WaitOptions;
-import io.appium.java_client.touch.offset.PointOption;
 import org.example.abstractClass.AbstractPageObject;
 import org.example.helpClass.Swipe;
 import org.example.myEnum.Side;
-
-import java.time.Duration;
 
 public class AmazonStockForecastElements extends AbstractPageObject {
     @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"Amazon stock forecast for 2022: Should you buy the dip?\n" +
@@ -68,13 +63,15 @@ public class AmazonStockForecastElements extends AbstractPageObject {
 
 
     public AmazonStockForecastElements tapAmazonStockForecast() {
-        TouchAction touchAction = new TouchAction(getAndroidDriver());
-        touchAction
-                .press(PointOption.point(620, 2000))
-                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000)))
-                .moveTo(PointOption.point(620, 800))
-                .release()
-                .perform();
+        // TouchAction touchAction = new TouchAction(getAndroidDriver());
+        //  touchAction
+        //           .press(PointOption.point(620, 2000))
+        //           .waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000)))
+        //           .moveTo(PointOption.point(620, 600))
+        //           .release()
+        //           .perform();
+        Swipe swipe = new Swipe(getAndroidDriver());
+        swipe.swipeScreen(Side.UP_SECTION);
         amazonStockForecast.click();
         return this;
     }
@@ -106,7 +103,7 @@ public class AmazonStockForecastElements extends AbstractPageObject {
         Swipe swipe = new Swipe(getAndroidDriver());
         swipe.swipeScreen(Side.UP_FAST);
         swipe.swipeScreen(Side.UP_FAST);
-        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_SHORT);
         yearOnYear.click();
         return this;
     }
@@ -114,77 +111,162 @@ public class AmazonStockForecastElements extends AbstractPageObject {
     public AmazonStockForecastElements tapFiledStatement() {
         Swipe swipe = new Swipe(getAndroidDriver());
         swipe.swipeScreen(Side.UP_FAST);
-        swipe.swipeScreen(Side.UP);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
         filedStatement.click();
         return this;
     }
 
     public AmazonStockForecastElements tapSec() {
+        Swipe swipe = new Swipe(getAndroidDriver());
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
         sec.click();
         return this;
     }
 
     public AmazonStockForecastElements tapSplit() {
+        Swipe swipe = new Swipe(getAndroidDriver());
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_SHORT);
         split.click();
         return this;
     }
 
     public AmazonStockForecastElements tapDotcom() {
+        Swipe swipe = new Swipe(getAndroidDriver());
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_SHORT);
         dotcom.click();
         return this;
     }
 
     public AmazonStockForecastElements tapTradingOfAmazonShares() {
+        Swipe swipe = new Swipe(getAndroidDriver());
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_SHORT);
         tradingOfAmazonShares.click();
         return this;
     }
 
     public AmazonStockForecastElements tapBuyBackShares() {
+        Swipe swipe = new Swipe(getAndroidDriver());
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_SHORT);
         buyBackShares.click();
         return this;
     }
 
     public AmazonStockForecastElements tapGoogle() {
+        Swipe swipe = new Swipe(getAndroidDriver());
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_SHORT);
         google.click();
         return this;
     }
 
     public AmazonStockForecastElements tapApple() {
+        Swipe swipe = new Swipe(getAndroidDriver());
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_SHORT);
         apple.click();
         return this;
     }
 
     public AmazonStockForecastElements tapTesla() {
+        Swipe swipe = new Swipe(getAndroidDriver());
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_SHORT);
         tesla.click();
         return this;
     }
 
     public AmazonStockForecastElements tapAmazonShareValue() {
+        Swipe swipe = new Swipe(getAndroidDriver());
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_SHORT);
         amazonShareValue.click();
         return this;
     }
 
     public AmazonStockForecastElements tapNoted() {
+        Swipe swipe = new Swipe(getAndroidDriver());
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
         noted.click();
         return this;
     }
 
     public AmazonStockForecastElements tapAmazon1() {
+        Swipe swipe = new Swipe(getAndroidDriver());
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_SHORT);
         amazon1.click();
         return this;
     }
 
     public AmazonStockForecastElements tapAmazon2() {
+        Swipe swipe = new Swipe(getAndroidDriver());
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
         amazon2.click();
         return this;
     }
 
     public AmazonStockForecastElements tapMA() {
+        Swipe swipe = new Swipe(getAndroidDriver());
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_SHORT);
         mas.click();
         return this;
     }
 
     public AmazonStockForecastElements tapRSI() {
+        Swipe swipe = new Swipe(getAndroidDriver());
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_FAST);
+        swipe.swipeScreen(Side.UP_SHORT);
         rsi.click();
         return this;
     }

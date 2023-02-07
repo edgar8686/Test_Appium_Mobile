@@ -33,6 +33,7 @@ public class AvalancheWhitepaperLinkTest extends AbstractTest {
             tapElement.tapAvaxPricePrediction();
             Thread.sleep(3000);
             tapElement.tapAvalancheWhitepaper();
+            getAndroidDriver().getWindowHandle();
             System.out.println(getAndroidDriver().getTitle());
             System.out.println(getAndroidDriver().getCurrentUrl());
             System.out.println(getAndroidDriver().getContextHandles());

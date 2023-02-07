@@ -45,9 +45,8 @@ public class ShibCoinPriceLinkTest extends AbstractTest {
                     .perform();
 
             tapElement.tapShibCoinPrice();
-            Thread.sleep(1000);
             getAndroidDriver().context("WEBVIEW_chrome");
-            Thread.sleep(1000);
+            getAndroidDriver().getWindowHandle();
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Shibu inu price prediction)  ShibCoinPriceLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));

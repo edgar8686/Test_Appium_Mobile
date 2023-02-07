@@ -24,10 +24,9 @@ public abstract class AbstractTest {
         dc.setCapability("deviceName", "emulator-5554");
         dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UIAutomator2");
         dc.setCapability("app", "C:\\Users\\edgar\\AndroidStudioProjects\\MyApplication\\app\\src\\main\\res\\xml\\Crypto Academy.apk");
-         //dc.setCapability("autoWebviewTimeout", "15000");
-        //dc.setCapability(MobileCapabilityType., "100000");
+        //dc.setCapability("autoWebviewTimeout", "15000");
         //dc.setCapability("systemPort", "4723");
-       // dc.setCapability("isHeadless", "true");
+        dc.setCapability("isHeadless", "true");
 
 
         androidDriver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), dc);

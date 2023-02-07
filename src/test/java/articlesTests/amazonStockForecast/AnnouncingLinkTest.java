@@ -18,6 +18,7 @@ import java.nio.file.Files;
 
 public class AnnouncingLinkTest extends AbstractTest {
     static Logger logger = LoggerFactory.getLogger(AnnouncingLinkTest.class);
+
     @Epic("Articles")
     @Feature("Amazon stock forecast for 2022: Should you buy the dip?")
     @DisplayName("Test№2")

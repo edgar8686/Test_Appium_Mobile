@@ -45,9 +45,8 @@ public class WhitepaperLinkTest extends AbstractTest {
                     .release()
                     .perform();
             tapElement.tapWhitepaper();
-            Thread.sleep(1000);
             getAndroidDriver().context("WEBVIEW_chrome");
-            Thread.sleep(1000);
+            getAndroidDriver().getWindowHandle();
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (CRO price prediction) WhitepaperLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
