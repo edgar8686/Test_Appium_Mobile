@@ -26,7 +26,7 @@
         <webdrivermanager.version>5.0.3</webdrivermanager.version>
         <allure.version>2.15.0</allure.version>
         <allure-maven.version>2.10.0</allure-maven.version>
-        <maven.surefire.plugin>3.0.0-M8</maven.surefire.plugin>
+        <maven.surefire.plugin>2.22.0</maven.surefire.plugin>
     </properties>
     <dependencies>
         <dependency>
@@ -138,7 +138,8 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.plugin}</version>
                 <configuration>
-
+                    <parallel>methods</parallel>
+                    <threadCount>2</threadCount>
                     <testFailureIgnore>false</testFailureIgnore>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
@@ -148,11 +149,7 @@
                             <name>junit.jupiter.extensions.autodetection.enabled</name>
                             <value>true</value>
                         </property>
-                        <property>
-                            <surefire.rerunFailingTestsCount>2</surefire.rerunFailingTestsCount>
-                        </property>
                     </systemProperties>
-                    <rerunFailingTestsCount>2</rerunFailingTestsCount>
                 </configuration>
                 <dependencies>
                     <dependency>

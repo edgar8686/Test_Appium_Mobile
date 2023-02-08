@@ -1,5 +1,6 @@
 package org.example.pageElements;
 
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -54,8 +55,6 @@ public class AmazonStockForecastElements extends AbstractPageObject {
     private MobileElement amazon3;
     @AndroidFindBy(accessibility = "stock")
     private MobileElement stock;
-
-    Swipe swipe = new Swipe(getAndroidDriver());
 
     public AmazonStockForecastElements(AndroidDriver driver) {
         super(driver);
@@ -272,21 +271,45 @@ public class AmazonStockForecastElements extends AbstractPageObject {
     }
 
     public AmazonStockForecastElements tapAmazon3() {
+        getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
+        getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
+        getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
         amazon1.click();
         return this;
     }
 
     public AmazonStockForecastElements tapAmazon4() {
+        getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
+        getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
+        getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
         amazon2.click();
         return this;
     }
 
     public AmazonStockForecastElements tapAmazon5() {
-        amazon3.click();
+        getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
+        getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
+        getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
+        amazon2.click();
         return this;
     }
 
     public AmazonStockForecastElements tapStock() {
+        getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
+        getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
+        getAndroidDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(false)).flingForward()"));
         stock.click();
         return this;
     }

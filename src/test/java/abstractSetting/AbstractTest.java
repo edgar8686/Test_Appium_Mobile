@@ -25,14 +25,38 @@ public abstract class AbstractTest {
         dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UIAutomator2");
         dc.setCapability("app", "C:\\Users\\edgar\\AndroidStudioProjects\\MyApplication\\app\\src\\main\\res\\xml\\Crypto Academy.apk");
         //dc.setCapability("autoWebviewTimeout", "15000");
-        //dc.setCapability("systemPort", "4723");
-        dc.setCapability("isHeadless", "true");
+       // dc.setCapability("systemPort", "8100");
+        //dc.setCapability("chromedriverPort", "8102");
+        // dc.setCapability("mjpegServerPort", "8100");
+        //dc.setCapability("isHeadless", "true");
 
 
         androidDriver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), dc);
 
         WebDriverWait wait = new WebDriverWait(androidDriver, 30);
     }
+
+   /* @BeforeEach
+    public void setU2() throws MalformedURLException {
+        DesiredCapabilities dc = new DesiredCapabilities();
+        dc.setCapability("platformName", "Android");
+        dc.setCapability("platformVersion", "12");
+        dc.setCapability("deviceName", "emulator-5556");
+        dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UIAutomator2");
+        dc.setCapability("app", "C:\\Users\\edgar\\AndroidStudioProjects\\MyApplication\\app\\src\\main\\res\\xml\\Crypto Academy.apk");
+        //dc.setCapability("autoWebviewTimeout", "15000");
+        dc.setCapability("systemPort", "8200");
+        //dc.setCapability("chromedriverPort", "8202");
+        //dc.setCapability("mjpegServerPort", "8200");
+        // dc.setCapability("isHeadless", "true");
+
+
+        androidDriver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), dc);
+
+        WebDriverWait wait = new WebDriverWait(androidDriver, 30);
+    }
+
+    */
 
     @AfterEach
     public void closeWeb() {
