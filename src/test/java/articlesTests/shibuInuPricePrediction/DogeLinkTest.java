@@ -9,6 +9,7 @@ import org.example.utils.MyUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.opentest4j.AssertionFailedError;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,14 +43,17 @@ public class DogeLinkTest extends AbstractTest {
             tapElement.tapDoge();
             getAndroidDriver().context("WEBVIEW_chrome");
             getAndroidDriver().getWindowHandle();
+            Assertions.assertTrue(getAndroidDriver().getTitle().equals("DOGE/USD Chart | Live DogeCoin to US Dollar Price"));
+            Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/dogecoin-to-usd"));
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Shibu inu price prediction) DogeLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
             logger.error("(Shibu inu price prediction) DogeLinkTest- False");
+        } catch (AssertionFailedError a) {
+            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
+            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
+            logger.error("(Amazon stock forecast for 2022) DogeLinkTest- false");
         }
-        Assertions.assertTrue(getAndroidDriver().getTitle().equals("DOGE/USD Chart | Live DogeCoin to US Dollar Price"));
-        Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/dogecoin-to-usd"));
-        //getAndroidDriver().context("NATIVE_APP");
         logger.info("(Shibu inu price prediction) DogeLinkTest- passed");
     }
 }

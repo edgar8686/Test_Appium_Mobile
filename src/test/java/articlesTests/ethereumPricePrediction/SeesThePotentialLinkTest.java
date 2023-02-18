@@ -7,6 +7,7 @@ import org.example.utils.MyUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.opentest4j.AssertionFailedError;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,13 +35,17 @@ public class SeesThePotentialLinkTest extends AbstractTest {
             tapElement.tapSeesThePotential();
             getAndroidDriver().context("WEBVIEW_chrome");
             getAndroidDriver().getWindowHandle();
+            Assertions.assertTrue(getAndroidDriver().getTitle().equals("Crypto Weekly: Neither the market nor stablecoins are stable | Saxo Markets"));
+            Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://www.home.saxo/en-au/content/articles/cryptocurrencies/crypto-weekly-09052022"));
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Ethereum price prediction) SeesThePotentialLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
             logger.error("org.example.articlesTests (Ethereum price prediction) SeesThePotentialLinkTest- False");
+        } catch (AssertionFailedError a) {
+            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
+            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
+            logger.error("(Amazon stock forecast for 2022) SeesThePotentialLinkTest- false");
         }
-        Assertions.assertTrue(getAndroidDriver().getTitle().equals("Crypto Weekly: Neither the market nor stablecoins are stable | Saxo Markets"));
-        Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://www.home.saxo/en-au/content/articles/cryptocurrencies/crypto-weekly-09052022"));
         logger.info("(Ethereum price prediction) SeesThePotentialLinkTest- passed");
     }
 }

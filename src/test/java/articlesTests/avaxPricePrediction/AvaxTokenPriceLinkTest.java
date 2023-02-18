@@ -7,6 +7,7 @@ import org.example.utils.MyUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.opentest4j.AssertionFailedError;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,13 +35,17 @@ public class AvaxTokenPriceLinkTest extends AbstractTest {
             tapElement.tapAvaxTokenPrice();
             getAndroidDriver().context("WEBVIEW_chrome");
             getAndroidDriver().getWindowHandle();
+            Assertions.assertTrue(getAndroidDriver().getTitle().equals("AVAX/USD Chart | Live AVAX to US Dollar Price"));
+            Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/avax-to-us-dollar-chart"));
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (AVAX price prediction) AvaxTokenPriceLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
             logger.error("org.example.articlesTests (AVAX price prediction) AvaxTokenPriceLinkTest- False");
+        } catch (AssertionFailedError a) {
+            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
+            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
+            logger.error("(Amazon stock forecast for 2022) AvaxTokenPriceLinkTest- false");
         }
-        Assertions.assertTrue(getAndroidDriver().getTitle().equals("AVAX/USD Chart | Live AVAX to US Dollar Price"));
-        Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/avax-to-us-dollar-chart"));
         logger.info("(AVAX price prediction) AvaxTokenPriceLinkTest- passed");
     }
 }

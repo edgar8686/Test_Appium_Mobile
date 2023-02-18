@@ -7,6 +7,7 @@ import org.example.utils.MyUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.opentest4j.AssertionFailedError;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,13 +35,17 @@ public class PosLinkTest extends AbstractTest {
             tapElement.tapPos();
             getAndroidDriver().context("WEBVIEW_chrome");
             getAndroidDriver().getWindowHandle();
+            Assertions.assertTrue(getAndroidDriver().getTitle().equals("What Is Proof of Stake (PoS) | Definition and Meaning | Capital.com"));
+            Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/proof-of-stake-definition"));
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Ethereum price prediction) PosLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
             logger.error("org.example.articlesTests (Ethereum price prediction) PosLinkTest- False");
+        } catch (AssertionFailedError a) {
+            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
+            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
+            logger.error("(Amazon stock forecast for 2022) PosLinkTest- false");
         }
-        Assertions.assertTrue(getAndroidDriver().getTitle().equals("What Is Proof of Stake (PoS) | Definition and Meaning | Capital.com"));
-        Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/proof-of-stake-definition"));
         logger.info("(Ethereum price prediction) PosLinkTest- passed");
     }
 }

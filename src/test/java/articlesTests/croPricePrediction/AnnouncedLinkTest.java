@@ -7,6 +7,7 @@ import org.example.utils.MyUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.opentest4j.AssertionFailedError;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,13 +34,17 @@ public class AnnouncedLinkTest extends AbstractTest {
             tapElement.tapAnnounced();
             getAndroidDriver().context("WEBVIEW_chrome");
             getAndroidDriver().getWindowHandle();
+            Assertions.assertTrue(getAndroidDriver().getTitle().equals("Revised Changes to Crypto.com Visa Cards Update"));
+            Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://crypto.com/product-news/crypto-com-visa-cards-update"));
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (CRO price prediction) AnnouncedLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
             logger.error("org.example.articlesTests (CRO price prediction) AnnouncedLinkTest- False");
+        } catch (AssertionFailedError a) {
+            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
+            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
+            logger.error("(Amazon stock forecast for 2022) AnnouncedLinkTest- false");
         }
-        Assertions.assertTrue(getAndroidDriver().getTitle().equals("Revised Changes to Crypto.com Visa Cards Update"));
-        Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://crypto.com/product-news/crypto-com-visa-cards-update"));
         logger.info("(CRO price prediction) AnnouncedLinkTest- passed");
     }
 }

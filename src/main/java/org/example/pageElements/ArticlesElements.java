@@ -1,82 +1,82 @@
 package org.example.pageElements;
 
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.touch.offset.PointOption;
 import org.example.abstractClass.AbstractPageObject;
+import org.openqa.selenium.WebElement;
 
 public class ArticlesElements extends AbstractPageObject {
 
     @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Welcome to Crypto Investmate — become a part of the crypto world!\"]/android.widget.ImageView[1]")
-    private MobileElement exit;
+    private WebElement exit;
     @AndroidFindBy(accessibility = "Articles\n" +
             "Tab 2 of 4")
-    private MobileElement articles;
+    private WebElement articles;
     @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"Shiba inu price prediction: Can the meme coin stop the slide?\n" +
             "crypto\n" +
             "May 09, 2022  12:07\"]")
-    private MobileElement shibaInuPrice;
+    private WebElement shibaInuPrice;
     @AndroidFindBy(accessibility = "SHIB")
-    private MobileElement shib;
+    private WebElement shib;
     @AndroidFindBy(accessibility = "DOGE")
-    private MobileElement doge;
+    private WebElement doge;
     @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"Robinhood listed the coin\"]")
-    private MobileElement listedRobinhood;
+    private WebElement listedRobinhood;
     @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"Shiba inu\"]")
-    private MobileElement shibaInu;
+    private WebElement shibaInu;
     @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"bitcoin (BTC)\"]")
-    private MobileElement bitcoinBtc;
+    private WebElement bitcoinBtc;
     @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"NFT\"]")
-    private MobileElement nft;
+    private WebElement nft;
     @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"SHIB coin price\"]")
-    private MobileElement shibCoinPrice;
+    private WebElement shibCoinPrice;
     @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"decentralised autonomous organisation\"]")
-    private MobileElement dao;
+    private WebElement dao;
     @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"SHIB\"]")
-    private MobileElement shib2;
+    private WebElement shib2;
     @AndroidFindBy(xpath = "(//android.widget.Button[@content-desc=\"SHIB\"])[1]")
-    private MobileElement shib3;
+    private WebElement shib3;
     @AndroidFindBy(xpath = "(//android.widget.Button[@content-desc=\"SHIB\"])[2]")
-    private MobileElement shib4;
+    private WebElement shib4;
     @AndroidFindBy(accessibility = "CRO price prediction: Will the Crypto.com token rebound?\n" +
             "crypto\n" +
             "May 12, 2022  15:55")
-    private MobileElement croPrice;
+    private WebElement croPrice;
     @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"CRO\"]")
-    private MobileElement cro;
+    private WebElement cro;
 
     @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"CRO\"][2]")
-    private MobileElement cro2;
+    private WebElement cro2;
     @AndroidFindBy(accessibility = "decentralised finance (DeFi),")
-    private MobileElement deFi;
+    private WebElement deFi;
     @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"Web3\"]")
-    private MobileElement web3;
+    private WebElement web3;
     @AndroidFindBy(accessibility = "non-fungible token (NFT)")
-    private MobileElement nonFungibleToken;
+    private WebElement nonFungibleToken;
     @AndroidFindBy(accessibility = "Crypto.com whitepaper")
-    private MobileElement whitepaper;
+    private WebElement whitepaper;
     @AndroidFindBy(accessibility = "staking")
-    private MobileElement staking;
+    private WebElement staking;
     @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"CRO\"]")
-    private MobileElement cro3;
+    private WebElement cro3;
     @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"technical analysis\"]")
-    private MobileElement technicalAnalysis;
+    private WebElement technicalAnalysis;
     @AndroidFindBy(accessibility = "Relative Strength Index (RSI)")
-    private MobileElement relativeStrengthIndex;
+    private WebElement relativeStrengthIndex;
     @AndroidFindBy(accessibility = "moving averages")
-    private MobileElement movingAverages;
+    private WebElement movingAverages;
     @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"CRO\"]")
-    private MobileElement cro4;
+    private WebElement cro4;
     @AndroidFindBy(accessibility = "announced")
-    private MobileElement announced;
+    private WebElement announced;
     @AndroidFindBy(accessibility = "mainnet")
-    private MobileElement mainnet;
+    private WebElement mainnet;
     @AndroidFindBy(accessibility = "@cronos_chain")
-    private MobileElement cronosChain;
+    private WebElement cronosChain;
     @AndroidFindBy(accessibility = "CRO/USD")
-    private MobileElement croUsd;
+    private WebElement croUsd;
     //
 
 

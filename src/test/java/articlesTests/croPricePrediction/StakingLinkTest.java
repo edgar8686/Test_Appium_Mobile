@@ -9,6 +9,7 @@ import org.example.utils.MyUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.opentest4j.AssertionFailedError;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -47,13 +48,17 @@ public class StakingLinkTest extends AbstractTest {
             tapElement.tapStaking();
             getAndroidDriver().context("WEBVIEW_chrome");
             getAndroidDriver().getWindowHandle();
+            Assertions.assertTrue(getAndroidDriver().getTitle().equals("What is staking crypto? A closer look at the rise of PoS"));
+            Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/what-is-staking-in-crypto-a-closer-look-at-the-rise-of-pos"));
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (CRO price prediction) StakingLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
             logger.error("org.example.articlesTests (CRO price prediction) StakingLinkTest- False");
+        } catch (AssertionFailedError a) {
+            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
+            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
+            logger.error("(Amazon stock forecast for 2022) StakingLinkTest- false");
         }
-        Assertions.assertTrue(getAndroidDriver().getTitle().equals("What is staking crypto? A closer look at the rise of PoS"));
-        Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/what-is-staking-in-crypto-a-closer-look-at-the-rise-of-pos"));
         logger.info("(CRO price prediction) StakingLinkTest- passed");
     }
 }

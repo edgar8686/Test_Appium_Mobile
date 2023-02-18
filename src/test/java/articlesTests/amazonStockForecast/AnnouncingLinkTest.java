@@ -8,6 +8,7 @@ import org.example.utils.MyUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.opentest4j.AssertionFailedError;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -36,13 +37,17 @@ public class AnnouncingLinkTest extends AbstractTest {
             tapElement.tapAnnouncing();
             getAndroidDriver().context("WEBVIEW_chrome");
             getAndroidDriver().getWindowHandle();
+            Assertions.assertTrue(getAndroidDriver().getTitle().equals("Amazon.com, Inc. - Amazon.com Announces First Quarter Results"));
+            Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://ir.aboutamazon.com/news-release/news-release-details/2022/Amazon.com-Announces-First-Quarter-Results-f0188db95/default.aspx"));
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AnnouncingLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
             logger.error("org.example.articlesTests (Amazon stock forecast for 2022) AnnouncingLinkTest- False");
+        } catch (AssertionFailedError a) {
+            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
+            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
+            logger.error("(Amazon stock forecast for 2022) AnnouncingLinkTest- false");
         }
-        Assertions.assertTrue(getAndroidDriver().getTitle().equals("Amazon.com, Inc. - Amazon.com Announces First Quarter Results"));
-        Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://ir.aboutamazon.com/news-release/news-release-details/2022/Amazon.com-Announces-First-Quarter-Results-f0188db95/default.aspx"));
         logger.info("(Amazon stock forecast for 2022) AnnouncingLinkTest- passed");
     }
 }

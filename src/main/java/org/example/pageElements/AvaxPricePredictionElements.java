@@ -1,54 +1,54 @@
 package org.example.pageElements;
 
 import io.appium.java_client.MobileBy;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.touch.offset.PointOption;
 import org.example.abstractClass.AbstractPageObject;
 import org.openqa.selenium.InvalidSelectorException;
+import org.openqa.selenium.WebElement;
 
 public class AvaxPricePredictionElements extends AbstractPageObject {
     @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Welcome to Crypto Investmate — become a part of the crypto world!\"]/android.widget.ImageView[1]")
-    private MobileElement exit;
+    private WebElement exit;
     @AndroidFindBy(accessibility = "Articles\n" +
             "Tab 2 of 4")
-    private MobileElement articles;
+    private WebElement articles;
     @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"AVAX price prediction: Will Avalanche fall further?\n" +
             "crypto\n" +
             "May 13, 2022  10:22\"]")
-    private MobileElement avaxPricePrediction;
+    private WebElement avaxPricePrediction;
     @AndroidFindBy(accessibility = "AVAX")
-    private MobileElement avax;
+    private WebElement avax;
     @AndroidFindBy(accessibility = "BTC")
-    private MobileElement btc;
+    private WebElement btc;
     @AndroidFindBy(accessibility = "blockchain")
-    private MobileElement blockchain;
+    private WebElement blockchain;
     @AndroidFindBy(accessibility = "Smart contract")
-    private MobileElement smartContract;
+    private WebElement smartContract;
     @AndroidFindBy(accessibility = "DeFi")
-    private MobileElement deFi;
+    private WebElement deFi;
     @AndroidFindBy(accessibility = "SOL")
-    private MobileElement sol;
+    private WebElement sol;
     @AndroidFindBy(accessibility = "ETH")
-    private MobileElement ethereum;
+    private WebElement ethereum;
     @AndroidFindBy(accessibility = "gas fees")
-    private MobileElement gasFees;
+    private WebElement gasFees;
     @AndroidFindBy(accessibility = "Avalanche’s whitepaper")
-    private MobileElement avalancheWhitepaper;
+    private WebElement avalancheWhitepaper;
     @AndroidFindBy(accessibility = "PoS")
-    private MobileElement pos;
+    private WebElement pos;
     //AVAX3
     @AndroidFindBy(accessibility = "staking")
-    private MobileElement staking;
+    private WebElement staking;
     //AVAX4
     @AndroidFindBy(accessibility = "web3")
-    private MobileElement web3;
+    private WebElement web3;
     @AndroidFindBy(accessibility = "AVAX token price")
-    private MobileElement avaxTokenPrice;
+    private WebElement avaxTokenPrice;
     @AndroidFindBy(id = "com.android.chrome:id/infobar_message")
-    private MobileElement link;
+    private WebElement link;
 
     public AvaxPricePredictionElements(AndroidDriver driver) {
         super(driver);

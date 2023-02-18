@@ -8,6 +8,7 @@ import org.example.utils.MyUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.opentest4j.AssertionFailedError;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,13 +38,17 @@ public class YearOnYearLinkTest extends AbstractTest {
             tapElement.tapYearOnYear();
             getAndroidDriver().context("WEBVIEW_chrome");
             getAndroidDriver().getWindowHandle();
+            Assertions.assertTrue(getAndroidDriver().getTitle().equals("Year-over-year (YOY) | Definition and Meaning | Capital.com"));
+            Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/year-over-year-definition"));
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) YearOnYearLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
             logger.error("org.example.articlesTests (Amazon stock forecast for 2022) YearOnYearLinkTest- False");
+        } catch (AssertionFailedError a) {
+            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
+            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
+            logger.error("(Amazon stock forecast for 2022) YearOnYearLinkTest- false");
         }
-        Assertions.assertTrue(getAndroidDriver().getTitle().equals("Year-over-year (YOY) | Definition and Meaning | Capital.com"));
-        Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/year-over-year-definition"));
         logger.info("(Amazon stock forecast for 2022) YearOnYearLinkTest- passed");
     }
 }

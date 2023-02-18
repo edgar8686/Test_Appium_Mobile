@@ -9,6 +9,7 @@ import org.example.utils.MyUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.opentest4j.AssertionFailedError;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -47,13 +48,17 @@ public class WhitepaperLinkTest extends AbstractTest {
             tapElement.tapWhitepaper();
             getAndroidDriver().context("WEBVIEW_chrome");
             getAndroidDriver().getWindowHandle();
+            Assertions.assertTrue(getAndroidDriver().getTitle().equals("Crypto.com: The best place to buy Bitcoin, Ethereum, and 250+ altcoins"));
+            Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://crypto.com/"));
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (CRO price prediction) WhitepaperLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
             logger.error("org.example.articlesTests (CRO price prediction) WhitepaperLinkTest- False");
+        } catch (AssertionFailedError a) {
+            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
+            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
+            logger.error("(Amazon stock forecast for 2022) WhitepaperLinkTest- false");
         }
-        Assertions.assertTrue(getAndroidDriver().getTitle().equals("Crypto.com: The best place to buy Bitcoin, Ethereum, and 250+ altcoins"));
-        Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://crypto.com/"));
         logger.info("(CRO price prediction) WhitepaperLinkTest- passed");
     }
 }

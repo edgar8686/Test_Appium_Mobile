@@ -8,6 +8,7 @@ import org.example.utils.MyUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.opentest4j.AssertionFailedError;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,6 +19,7 @@ import java.nio.file.Files;
 
 public class Rivn2LinkTest extends AbstractTest {
     static Logger logger = LoggerFactory.getLogger(Rivn2LinkTest.class);
+
     @Epic("Articles")
     @Feature("Amazon stock forecast for 2022: Should you buy the dip?")
     @DisplayName("Test№4")
@@ -36,13 +38,17 @@ public class Rivn2LinkTest extends AbstractTest {
             tapElement.tapRivn2();
             getAndroidDriver().context("WEBVIEW_chrome");
             getAndroidDriver().getWindowHandle();
+            Assertions.assertTrue(getAndroidDriver().getTitle().equals("Rivian Automotive, Inc. / DE (RIVN) Stock Price & Chart | Trade Now"));
+            Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/rivian-automotive-inc-de-share-price"));
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) Rivn2LinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
             logger.error("org.example.articlesTests (Amazon stock forecast for 2022) Rivn2LinkTest- False");
+        } catch (AssertionFailedError a) {
+            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
+            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
+            logger.error("(Amazon stock forecast for 2022) Rivn2LinkTest- false");
         }
-        Assertions.assertTrue(getAndroidDriver().getTitle().equals("Rivian Automotive, Inc. / DE (RIVN) Stock Price & Chart | Trade Now"));
-        Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/rivian-automotive-inc-de-share-price"));
         logger.info("(Amazon stock forecast for 2022) Rivn2LinkTest- passed");
     }
 }

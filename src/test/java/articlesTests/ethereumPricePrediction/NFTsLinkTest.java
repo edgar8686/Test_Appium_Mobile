@@ -7,6 +7,7 @@ import org.example.utils.MyUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.opentest4j.AssertionFailedError;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,13 +35,17 @@ public class NFTsLinkTest extends AbstractTest {
             tapElement.tapNFTs();
             getAndroidDriver().context("WEBVIEW_chrome");
             getAndroidDriver().getWindowHandle();
+            Assertions.assertTrue(getAndroidDriver().getTitle().equals("[Guide] What are NFTs: everything you need to know about non-fungible tokens"));
+            Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/what-are-nfts-everything-you-need-to-know-about-non-fungible-tokens"));
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Ethereum price prediction) NFTsLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
             logger.error("org.example.articlesTests (Ethereum price prediction) NFTsLinkTest- False");
+        } catch (AssertionFailedError a) {
+            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
+            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
+            logger.error("(Amazon stock forecast for 2022) NFTsLinkTest- false");
         }
-        Assertions.assertTrue(getAndroidDriver().getTitle().equals("[Guide] What are NFTs: everything you need to know about non-fungible tokens"));
-        Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/what-are-nfts-everything-you-need-to-know-about-non-fungible-tokens"));
         logger.info("(Ethereum price prediction) NFTsLinkTest- passed");
     }
 }

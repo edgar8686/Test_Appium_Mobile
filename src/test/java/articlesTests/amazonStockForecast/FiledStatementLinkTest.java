@@ -8,6 +8,7 @@ import org.example.utils.MyUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.opentest4j.AssertionFailedError;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,13 +38,17 @@ public class FiledStatementLinkTest extends AbstractTest {
             tapElement.tapFiledStatement();
             getAndroidDriver().context("WEBVIEW_chrome");
             getAndroidDriver().getWindowHandle();
+            Assertions.assertTrue(getAndroidDriver().getTitle().equals("Inline XBRL Viewer"));
+            Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://www.sec.gov/ix?doc=/Archives/edgar/data/0001018724/000101872422000009/amzn-20220309.htm"));
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) FiledStatementLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
             logger.error("org.example.articlesTests (Amazon stock forecast for 2022) FiledStatementLinkTest- False");
+        } catch (AssertionFailedError a) {
+            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
+            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
+            logger.error("(Amazon stock forecast for 2022) FiledStatementLinkTest- false");
         }
-        Assertions.assertTrue(getAndroidDriver().getTitle().equals("Inline XBRL Viewer"));
-        Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://www.sec.gov/ix?doc=/Archives/edgar/data/0001018724/000101872422000009/amzn-20220309.htm"));
         logger.info("(Amazon stock forecast for 2022) FiledStatementLinkTest- passed");
     }
 }

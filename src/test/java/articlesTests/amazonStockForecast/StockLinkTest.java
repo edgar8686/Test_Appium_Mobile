@@ -8,6 +8,7 @@ import org.example.utils.MyUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.opentest4j.AssertionFailedError;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -36,13 +37,17 @@ public class StockLinkTest extends AbstractTest {
             tapElement.tapStock();
             getAndroidDriver().context("WEBVIEW_chrome");
             getAndroidDriver().getWindowHandle();
+            Assertions.assertTrue(getAndroidDriver().getTitle().equals("Online Trading with Smart Investment App | Capital.com"));
+            Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/"));
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) StockLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
             logger.error("org.example.articlesTests (Amazon stock forecast for 2022) StockLinkTest- False");
+        } catch (AssertionFailedError a) {
+            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
+            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
+            logger.error("(Amazon stock forecast for 2022) StockLinkTest- false");
         }
-        Assertions.assertTrue(getAndroidDriver().getTitle().equals("Online Trading with Smart Investment App | Capital.com"));
-        Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/"));
         logger.info("(Amazon stock forecast for 2022) StockLinkTest- passed");
     }
 }

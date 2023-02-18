@@ -1,60 +1,60 @@
 package org.example.pageElements;
 
 import io.appium.java_client.MobileBy;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.example.abstractClass.AbstractPageObject;
 import org.example.helpClass.Swipe;
 import org.example.myEnum.Side;
+import org.openqa.selenium.WebElement;
 
 public class AmazonStockForecastElements extends AbstractPageObject {
     @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"Amazon stock forecast for 2022: Should you buy the dip?\n" +
             "stocks\n" +
             "May 11, 2022  16:50\"]")
-    private MobileElement amazonStockForecast;
+    private WebElement amazonStockForecast;
     @AndroidFindBy(accessibility = "AMZN")
-    private MobileElement amazon;
+    private WebElement amazon;
     @AndroidFindBy(accessibility = "announcing")
-    private MobileElement announcing;
+    private WebElement announcing;
     @AndroidFindBy(accessibility = "RIVN")
-    private MobileElement rivn;
+    private WebElement rivn;
     @AndroidFindBy(accessibility = "year-on-year")
-    private MobileElement yearOnYear;
+    private WebElement yearOnYear;
     @AndroidFindBy(accessibility = "filed a statement")
-    private MobileElement filedStatement;
+    private WebElement filedStatement;
     @AndroidFindBy(accessibility = "(SEC)")
-    private MobileElement sec;
+    private WebElement sec;
     @AndroidFindBy(accessibility = "split")
-    private MobileElement split;
+    private WebElement split;
     @AndroidFindBy(accessibility = "dotcom")
-    private MobileElement dotcom;
+    private WebElement dotcom;
     @AndroidFindBy(accessibility = "Trading of Amazon shares")
-    private MobileElement tradingOfAmazonShares;
+    private WebElement tradingOfAmazonShares;
     @AndroidFindBy(accessibility = "buy back shares")
-    private MobileElement buyBackShares;
+    private WebElement buyBackShares;
     @AndroidFindBy(accessibility = "GOOGL")
-    private MobileElement google;
+    private WebElement google;
     @AndroidFindBy(accessibility = "AAPL")
-    private MobileElement apple;
+    private WebElement apple;
     @AndroidFindBy(accessibility = "TSLA")
-    private MobileElement tesla;
+    private WebElement tesla;
     @AndroidFindBy(accessibility = "Amazon share value")
-    private MobileElement amazonShareValue;
+    private WebElement amazonShareValue;
     @AndroidFindBy(accessibility = "noted")
-    private MobileElement noted;
+    private WebElement noted;
     @AndroidFindBy(xpath = "(//android.widget.Button[@content-desc=\"AMZN\"])[1]")
-    private MobileElement amazon1;
+    private WebElement amazon1;
     @AndroidFindBy(xpath = "(//android.widget.Button[@content-desc=\"AMZN\"])[2]")
-    private MobileElement amazon2;
+    private WebElement amazon2;
     @AndroidFindBy(accessibility = "MAs")
-    private MobileElement mas;
+    private WebElement mas;
     @AndroidFindBy(accessibility = "RSI")
-    private MobileElement rsi;
+    private WebElement rsi;
     @AndroidFindBy(xpath = "((//android.widget.Button[@content-desc=\"AMZN\"])[3]")
-    private MobileElement amazon3;
+    private WebElement amazon3;
     @AndroidFindBy(accessibility = "stock")
-    private MobileElement stock;
+    private WebElement stock;
 
     public AmazonStockForecastElements(AndroidDriver driver) {
         super(driver);

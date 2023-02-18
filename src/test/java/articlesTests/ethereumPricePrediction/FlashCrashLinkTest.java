@@ -7,6 +7,7 @@ import org.example.utils.MyUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.opentest4j.AssertionFailedError;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,13 +35,17 @@ public class FlashCrashLinkTest extends AbstractTest {
             tapElement.tapFlashCrash();
             getAndroidDriver().context("WEBVIEW_chrome");
             getAndroidDriver().getWindowHandle();
+            Assertions.assertTrue(getAndroidDriver().getTitle().equals("What is Flash crash | Capital.com"));
+            Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/flash-crash-definition"));
         } catch (Exception e) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Ethereum price prediction) FlashCrashLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
             logger.error("org.example.articlesTests (Ethereum price prediction) FlashCrashLinkTest- False");
+        } catch (AssertionFailedError a) {
+            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
+            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
+            logger.error("(Amazon stock forecast for 2022) FlashCrashLinkTest- false");
         }
-        Assertions.assertTrue(getAndroidDriver().getTitle().equals("What is Flash crash | Capital.com"));
-        Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/flash-crash-definition"));
         logger.info("(Ethereum price prediction) FlashCrashLinkTest- passed");
     }
 }

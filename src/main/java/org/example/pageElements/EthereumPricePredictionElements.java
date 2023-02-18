@@ -1,7 +1,6 @@
 package org.example.pageElements;
 
 import io.appium.java_client.MobileBy;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -9,65 +8,66 @@ import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.example.abstractClass.AbstractPageObject;
 import org.openqa.selenium.InvalidSelectorException;
+import org.openqa.selenium.WebElement;
 
 import java.time.Duration;
 
 public class EthereumPricePredictionElements extends AbstractPageObject {
     @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Welcome to Crypto Investmate — become a part of the crypto world!\"]/android.widget.ImageView[1]")
-    private MobileElement exit;
+    private WebElement exit;
     @AndroidFindBy(accessibility = "Articles\n" +
             "Tab 2 of 4")
-    private MobileElement articles;
+    private WebElement articles;
     @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"Ethereum price prediction for 2022 and beyond: Will ETH ever hit $10,000?\n" +
             "crypto\n" +
             "May 12, 2022  15:09\"]")
-    private MobileElement etheriumPricePrediction;
+    private WebElement etheriumPricePrediction;
     @AndroidFindBy(accessibility = "ETH")
-    private MobileElement etherium;
+    private WebElement etherium;
     @AndroidFindBy(accessibility = "blockchain")
-    private MobileElement blockchain;
+    private WebElement blockchain;
     @AndroidFindBy(accessibility = "stablecoin")
-    private MobileElement stablecoin;
+    private WebElement stablecoin;
     @AndroidFindBy(accessibility = "liquidity pool")
-    private MobileElement liquidityPool;
+    private WebElement liquidityPool;
     @AndroidFindBy(accessibility = "BTC")
-    private MobileElement btc;
+    private WebElement btc;
     @AndroidFindBy(accessibility = "BT")
-    private MobileElement bt;
+    private WebElement bt;
     @AndroidFindBy(accessibility = "flash crash")
-    private MobileElement flashCrash;
+    private WebElement flashCrash;
     @AndroidFindBy(accessibility = "Cryptocurrency markets")
-    private MobileElement cryptocurrencyMarkets;
+    private WebElement cryptocurrencyMarkets;
     @AndroidFindBy(accessibility = "PoW")
-    private MobileElement pow;
+    private WebElement pow;
     @AndroidFindBy(accessibility = "PoS")
-    private MobileElement pos;
+    private WebElement pos;
     @AndroidFindBy(accessibility = "Ethereum 2.0 upgrade")
-    private MobileElement ethereumUpgrade;
+    private WebElement ethereumUpgrade;
     @AndroidFindBy(accessibility = "dApps")
-    private MobileElement dApps;
+    private WebElement dApps;
     @AndroidFindBy(accessibility = "DeFi")
-    private MobileElement deFi;
+    private WebElement deFi;
     @AndroidFindBy(accessibility = "NFTs")
-    private MobileElement nfts;
+    private WebElement nfts;
     @AndroidFindBy(accessibility = "DeFi Llama")
-    private MobileElement deFiLlama;
+    private WebElement deFiLlama;
     @AndroidFindBy(accessibility = "sees the potential")
-    private MobileElement seesThePotential;
+    private WebElement seesThePotential;
     @AndroidFindBy(accessibility = "bitcoins")
-    private MobileElement bitcoins;
+    private WebElement bitcoins;
     @AndroidFindBy(accessibility = "US500")
-    private MobileElement us500;
+    private WebElement us500;
     @AndroidFindBy(accessibility = "ETH coin price")
-    private MobileElement ethCoinPrice;
+    private WebElement ethCoinPrice;
     @AndroidFindBy(accessibility = "ethereum coin’s price")
-    private MobileElement ethereumCoinsPrice;
+    private WebElement ethereumCoinsPrice;
     @AndroidFindBy(accessibility = "cryptocurrency prices")
-    private MobileElement cryptocurrencyPrices;
+    private WebElement cryptocurrencyPrices;
     @AndroidFindBy(accessibility = "ether price")
-    private MobileElement etherPrice;
+    private WebElement etherPrice;
     @AndroidFindBy(accessibility = "stock market")
-    private MobileElement stockMarket;
+    private WebElement stockMarket;
 
 
     public EthereumPricePredictionElements(AndroidDriver driver) {
