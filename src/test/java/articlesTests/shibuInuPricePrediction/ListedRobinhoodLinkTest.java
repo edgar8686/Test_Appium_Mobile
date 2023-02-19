@@ -13,7 +13,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 
 public class ListedRobinhoodLinkTest extends AbstractTest {
@@ -25,7 +24,7 @@ public class ListedRobinhoodLinkTest extends AbstractTest {
     @Severity(SeverityLevel.CRITICAL)
     @Link("https://docs.google.com/spreadsheets/d/1cz-FGYsjfpLtaogip9UvuRrUE50nLWkGCkXN2xP-6fE/edit?usp=sharing")
     @Test
-    void listedRobinhoodLinkTest() throws IOException {
+    void listedRobinhoodLinkTest() throws Exception {
         try {
             ArticlesElements tapElement = new ArticlesElements(getAndroidDriver());
             tapElement.goToArticles();
@@ -37,10 +36,6 @@ public class ListedRobinhoodLinkTest extends AbstractTest {
             getAndroidDriver().getWindowHandle();
             Assertions.assertTrue(getAndroidDriver().getTitle().equals("Under the Hood"));
             Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://blog.robinhood.com/"));
-        } catch (Exception e) {
-            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Shibu inu price prediction)  listedRobinhoodLinkTest- False" + System.currentTimeMillis() + ".png");
-            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
-            logger.error("org.example.articlesTests (Shibu inu price prediction) listedRobinhoodLinkTest- False");
         } catch (AssertionFailedError a) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));

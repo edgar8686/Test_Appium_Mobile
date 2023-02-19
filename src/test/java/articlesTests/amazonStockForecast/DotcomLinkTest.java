@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 
 public class DotcomLinkTest extends AbstractTest {
@@ -26,7 +25,7 @@ public class DotcomLinkTest extends AbstractTest {
     @Severity(SeverityLevel.CRITICAL)
     @Link("https://docs.google.com/spreadsheets/d/1cz-FGYsjfpLtaogip9UvuRrUE50nLWkGCkXN2xP-6fE/edit?usp=sharing")
     @Test
-    void dotcomLinkTest() throws IOException {
+    void dotcomLinkTest() throws Exception {
         try {
             AmazonStockForecastElements tapElement = new AmazonStockForecastElements(getAndroidDriver());
             new GoTo(getAndroidDriver())
@@ -39,10 +38,6 @@ public class DotcomLinkTest extends AbstractTest {
             getAndroidDriver().getWindowHandle();
             Assertions.assertTrue(getAndroidDriver().getTitle().equals("Dotcom bubble definition | Capital.com"));
             Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/dotcom-bubble-definition"));
-        } catch (Exception e) {
-            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) DotcomLinkTest- False" + System.currentTimeMillis() + ".png");
-            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
-            logger.error("org.example.articlesTests (Amazon stock forecast for 2022) DotcomLinkTest- False");
         } catch (AssertionFailedError a) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));

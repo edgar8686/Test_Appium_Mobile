@@ -13,7 +13,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 
 public class BlockchainLinkTest extends AbstractTest {
@@ -25,7 +24,7 @@ public class BlockchainLinkTest extends AbstractTest {
     @Severity(SeverityLevel.CRITICAL)
     @Link("https://docs.google.com/spreadsheets/d/1cz-FGYsjfpLtaogip9UvuRrUE50nLWkGCkXN2xP-6fE/edit?usp=sharing")
     @Test
-    void blockchainLinkTest() throws IOException {
+    void blockchainLinkTest() throws Exception {
         try {
             EthereumPricePredictionElements tapElement = new EthereumPricePredictionElements(getAndroidDriver());
             tapElement.goToArticles();
@@ -37,10 +36,6 @@ public class BlockchainLinkTest extends AbstractTest {
             getAndroidDriver().getWindowHandle();
             Assertions.assertTrue(getAndroidDriver().getTitle().equals("What is a blockchain technology | How do blockchains work? | Capital.com"));
             Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/blockchain-technology-definition"));
-        } catch (Exception e) {
-            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Ethereum price prediction) BlockchainLinkTest- False" + System.currentTimeMillis() + ".png");
-            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
-            logger.error("org.example.articlesTests (Ethereum price prediction) BlockchainLinkTest- False");
         } catch (AssertionFailedError a) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));

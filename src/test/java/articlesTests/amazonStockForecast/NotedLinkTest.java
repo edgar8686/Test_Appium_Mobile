@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 
 public class NotedLinkTest extends AbstractTest {
@@ -26,7 +25,7 @@ public class NotedLinkTest extends AbstractTest {
     @Severity(SeverityLevel.CRITICAL)
     @Link("https://docs.google.com/spreadsheets/d/1cz-FGYsjfpLtaogip9UvuRrUE50nLWkGCkXN2xP-6fE/edit?usp=sharing")
     @Test
-    void notedLinkTest() throws IOException {
+    void notedLinkTest() throws Exception {
         try {
             AmazonStockForecastElements tapElement = new AmazonStockForecastElements(getAndroidDriver());
             new GoTo(getAndroidDriver())
@@ -39,10 +38,6 @@ public class NotedLinkTest extends AbstractTest {
             getAndroidDriver().getWindowHandle();
             Assertions.assertTrue(getAndroidDriver().getTitle().equals("Should You Buy Amazon Stock After The Stock Split Announcement? (NASDAQ:AMZN) | Seeking Alpha"));
             Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://seekingalpha.com/article/4497210-buy-amazon-stock-after-stock-split-announcement"));
-        } catch (Exception e) {
-            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) NotedLinkTest- False" + System.currentTimeMillis() + ".png");
-            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
-            logger.error("org.example.articlesTests (Amazon stock forecast for 2022) NotedLinkTest- False");
         } catch (AssertionFailedError a) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));

@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 
 public class MasLinkTest extends AbstractTest {
@@ -26,7 +25,7 @@ public class MasLinkTest extends AbstractTest {
     @Severity(SeverityLevel.CRITICAL)
     @Link("https://docs.google.com/spreadsheets/d/1cz-FGYsjfpLtaogip9UvuRrUE50nLWkGCkXN2xP-6fE/edit?usp=sharing")
     @Test
-    void masLinkTest() throws IOException {
+    void masLinkTest() throws Exception {
         try {
             AmazonStockForecastElements tapElement = new AmazonStockForecastElements(getAndroidDriver());
             new GoTo(getAndroidDriver())
@@ -39,10 +38,6 @@ public class MasLinkTest extends AbstractTest {
             getAndroidDriver().getWindowHandle();
             Assertions.assertTrue(getAndroidDriver().getTitle().equals("Trade with Moving Averages (MA) | How to Use MA Indicator in a Trading Strategy? | Capital.com"));
             Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/moving-average"));
-        } catch (Exception e) {
-            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) MasLinkTest- False" + System.currentTimeMillis() + ".png");
-            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
-            logger.error("org.example.articlesTests (Amazon stock forecast for 2022) MasLinkTest- False");
         } catch (AssertionFailedError a) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));

@@ -15,7 +15,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 
 public class WhitepaperLinkTest extends AbstractTest {
@@ -27,7 +26,7 @@ public class WhitepaperLinkTest extends AbstractTest {
     @Severity(SeverityLevel.CRITICAL)
     @Link("https://docs.google.com/spreadsheets/d/1cz-FGYsjfpLtaogip9UvuRrUE50nLWkGCkXN2xP-6fE/edit?usp=sharing")
     @Test
-    void whitepaperLinkTest() throws IOException {
+    void whitepaperLinkTest() throws Exception {
         try {
             TouchAction touchAction = new TouchAction(getAndroidDriver());
             ArticlesElements tapElement = new ArticlesElements(getAndroidDriver());
@@ -50,10 +49,6 @@ public class WhitepaperLinkTest extends AbstractTest {
             getAndroidDriver().getWindowHandle();
             Assertions.assertTrue(getAndroidDriver().getTitle().equals("Crypto.com: The best place to buy Bitcoin, Ethereum, and 250+ altcoins"));
             Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://crypto.com/"));
-        } catch (Exception e) {
-            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (CRO price prediction) WhitepaperLinkTest- False" + System.currentTimeMillis() + ".png");
-            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
-            logger.error("org.example.articlesTests (CRO price prediction) WhitepaperLinkTest- False");
         } catch (AssertionFailedError a) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));

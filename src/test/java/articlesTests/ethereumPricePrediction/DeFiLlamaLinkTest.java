@@ -13,7 +13,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 
 public class DeFiLlamaLinkTest extends AbstractTest {
@@ -25,7 +24,7 @@ public class DeFiLlamaLinkTest extends AbstractTest {
     @Severity(SeverityLevel.CRITICAL)
     @Link("https://docs.google.com/spreadsheets/d/1cz-FGYsjfpLtaogip9UvuRrUE50nLWkGCkXN2xP-6fE/edit?usp=sharing")
     @Test
-    void deFiLlamaLinkTest() throws IOException {
+    void deFiLlamaLinkTest() throws Exception {
         try {
             EthereumPricePredictionElements tapElement = new EthereumPricePredictionElements(getAndroidDriver());
             tapElement.goToArticles();
@@ -37,10 +36,6 @@ public class DeFiLlamaLinkTest extends AbstractTest {
             getAndroidDriver().getWindowHandle();
             Assertions.assertTrue(getAndroidDriver().getTitle().equals("Ethereum TVL - DefiLlama"));
             Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://defillama.com/chain/Ethereum"));
-        } catch (Exception e) {
-            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Ethereum price prediction) DeFiLlama- False" + System.currentTimeMillis() + ".png");
-            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
-            logger.error("org.example.articlesTests (Ethereum price prediction) DeFiLlama- False");
         } catch (AssertionFailedError a) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));

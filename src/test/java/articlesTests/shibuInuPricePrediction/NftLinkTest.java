@@ -15,7 +15,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 
 public class NftLinkTest extends AbstractTest {
@@ -27,7 +26,7 @@ public class NftLinkTest extends AbstractTest {
     @Severity(SeverityLevel.CRITICAL)
     @Link("https://docs.google.com/spreadsheets/d/1cz-FGYsjfpLtaogip9UvuRrUE50nLWkGCkXN2xP-6fE/edit?usp=sharing")
     @Test
-    void nftLinkTest() throws IOException {
+    void nftLinkTest() throws Exception {
         try {
             TouchAction touchAction = new TouchAction(getAndroidDriver());
             ArticlesElements tapElement = new ArticlesElements(getAndroidDriver());
@@ -44,10 +43,6 @@ public class NftLinkTest extends AbstractTest {
             getAndroidDriver().getWindowHandle();
             Assertions.assertTrue(getAndroidDriver().getTitle().equals("[Guide] What are NFTs: everything you need to know about non-fungible tokens"));
             Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/what-are-nfts-everything-you-need-to-know-about-non-fungible-tokens"));
-        } catch (Exception e) {
-            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Shibu inu price prediction) NFTLinkTest- False" + System.currentTimeMillis() + ".png");
-            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
-            logger.error("(Shibu inu price prediction) NFTLinkTest- False");
         } catch (AssertionFailedError a) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));

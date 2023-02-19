@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 
 public class FiledStatementLinkTest extends AbstractTest {
@@ -26,7 +25,7 @@ public class FiledStatementLinkTest extends AbstractTest {
     @Severity(SeverityLevel.CRITICAL)
     @Link("https://docs.google.com/spreadsheets/d/1cz-FGYsjfpLtaogip9UvuRrUE50nLWkGCkXN2xP-6fE/edit?usp=sharing")
     @Test
-    void filedStatementLinkTest() throws IOException {
+    void filedStatementLinkTest() throws Exception {
         try {
             AmazonStockForecastElements tapElement = new AmazonStockForecastElements(getAndroidDriver());
             new GoTo(getAndroidDriver())
@@ -40,10 +39,6 @@ public class FiledStatementLinkTest extends AbstractTest {
             getAndroidDriver().getWindowHandle();
             Assertions.assertTrue(getAndroidDriver().getTitle().equals("Inline XBRL Viewer"));
             Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://www.sec.gov/ix?doc=/Archives/edgar/data/0001018724/000101872422000009/amzn-20220309.htm"));
-        } catch (Exception e) {
-            File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) FiledStatementLinkTest- False" + System.currentTimeMillis() + ".png");
-            Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
-            logger.error("org.example.articlesTests (Amazon stock forecast for 2022) FiledStatementLinkTest- False");
         } catch (AssertionFailedError a) {
             File file = MyUtils.makeScreenshot(getAndroidDriver(), "failure- org.example.articlesTests (Amazon stock forecast for 2022) AmazonShareValueLinkTest- False" + System.currentTimeMillis() + ".png");
             Allure.addAttachment("Screenshot", new ByteArrayInputStream(MyUtils.saveScreenshot(Files.readAllBytes(file.toPath()))));
