@@ -28,34 +28,33 @@ public abstract class AbstractTest {
         // dc.setCapability("udid", "5554");
         //dc.setCapability("autoWebviewTimeout", "15000");
         //dc.setCapability("systemPort", "8100");
+        //dc.setCapability("chromedriverPort", "8101");
+        //dc.setCapability("mjpegServerPort", "8102");
         dc.setCapability("isHeadless", "true");
 
 
         androidDriver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), dc);
 
+       /* DesiredCapabilities dc = new DesiredCapabilities();
+        dm.setCapability("platformName", "Android");
+        dm.setCapability("platformVersion", "12");
+        dm.setCapability("deviceName", "emulator-5556");
+        dm.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UIAutomator2");
+        dm.setCapability("udid", "5556");
+        dm.setCapability("app", "C:\\Users\\edgar\\AndroidStudioProjects\\MyApplication\\app\\src\\main\\res\\xml\\Crypto Academy.apk");
+        //dm.setCapability("autoWebviewTimeout", "15000");
+        dm.setCapability("systemPort", "8200");
+        dm.setCapability("chromedriverPort", "8201");
+        dm.setCapability("mjpegServerPort", "8202");
+        // dm.setCapability("isHeadless", "true");
+
+
+        androidDriver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), dm);
+
+        */
+
         WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(30));
     }
-
-    /*@BeforeEach
-    public void setU2() throws MalformedURLException {
-        DesiredCapabilities dc = new DesiredCapabilities();
-        dc.setCapability("platformName", "Android");
-        dc.setCapability("platformVersion", "12");
-        dc.setCapability("deviceName", "emulator-5556");
-        dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UIAutomator2");
-        dc.setCapability("udid", "5556");
-        dc.setCapability("app", "C:\\Users\\edgar\\AndroidStudioProjects\\MyApplication\\app\\src\\main\\res\\xml\\Crypto Academy.apk");
-        //dc.setCapability("autoWebviewTimeout", "15000");
-        dc.setCapability("systemPort", "8200");
-        // dc.setCapability("isHeadless", "true");
-
-
-        androidDriver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), dc);
-
-    }
-
-     */
-
 
     @AfterEach
     public void closeWeb() {

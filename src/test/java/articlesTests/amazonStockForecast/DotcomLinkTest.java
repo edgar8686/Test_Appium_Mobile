@@ -1,7 +1,6 @@
 package articlesTests.amazonStockForecast;
 
 import abstractSetting.AbstractTest;
-import io.github.artsok.RepeatedIfExceptionsTest;
 import io.qameta.allure.*;
 import org.example.helpClass.GoTo;
 import org.example.pageElements.AmazonStockForecastElements;
@@ -26,7 +25,6 @@ public class DotcomLinkTest extends AbstractTest {
     @DisplayName("Test№9")
     @Severity(SeverityLevel.CRITICAL)
     @Link("https://docs.google.com/spreadsheets/d/1cz-FGYsjfpLtaogip9UvuRrUE50nLWkGCkXN2xP-6fE/edit?usp=sharing")
-    @RepeatedIfExceptionsTest(repeats = 1, exceptions = Exception.class)
     @Test
     void dotcomLinkTest() throws IOException {
         try {
