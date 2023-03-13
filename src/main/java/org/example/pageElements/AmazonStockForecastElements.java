@@ -1,12 +1,17 @@
 package org.example.pageElements;
 
 import io.appium.java_client.MobileBy;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 import org.example.abstractClass.AbstractPageObject;
 import org.example.helpClass.Swipe;
 import org.example.myEnum.Side;
 import org.openqa.selenium.WebElement;
+
+import java.time.Duration;
 
 public class AmazonStockForecastElements extends AbstractPageObject {
     @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"Amazon stock forecast for 2022: Should you buy the dip?\n" +
@@ -62,15 +67,13 @@ public class AmazonStockForecastElements extends AbstractPageObject {
 
 
     public AmazonStockForecastElements tapAmazonStockForecast() {
-        // TouchAction touchAction = new TouchAction(getAndroidDriver());
-        //  touchAction
-        //           .press(PointOption.point(620, 2000))
-        //           .waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000)))
-        //           .moveTo(PointOption.point(620, 600))
-        //           .release()
-        //           .perform();
-        Swipe swipe = new Swipe(getAndroidDriver());
-        swipe.swipeScreen(Side.UP_SECTION);
+        TouchAction touchAction = new TouchAction(getAndroidDriver());
+        touchAction
+                .press(PointOption.point(620, 2000))
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000)))
+                .moveTo(PointOption.point(620, 600))
+                .release()
+                .perform();
         amazonStockForecast.click();
         return this;
     }

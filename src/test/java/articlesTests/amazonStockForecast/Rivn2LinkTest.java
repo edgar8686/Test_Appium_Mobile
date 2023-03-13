@@ -32,7 +32,6 @@ public class Rivn2LinkTest extends AbstractTest {
                     .goToArticles();
             Thread.sleep(2000);
             tapElement.tapAmazonStockForecast();
-            System.out.println();
             Thread.sleep(3000);
             tapElement.tapRivn2();
             getAndroidDriver().context("WEBVIEW_chrome");

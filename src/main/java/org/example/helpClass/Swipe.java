@@ -41,19 +41,6 @@ public class Swipe extends AbstractPageObject {
                     return;
                 }
                 break;
-            case UP_SECTION:
-                pointOptionEnd = PointOption.point(dims.width / 2, dims.height - (int) (dims.height / 1.8));
-                try {
-                    new TouchAction(getAndroidDriver())
-                            .press(pointOptionStart)
-                            .waitAction(WaitOptions.waitOptions(Duration.ofMillis(PRESS_TIME)))
-                            .moveTo(pointOptionEnd)
-                            .release().perform();
-                } catch (Exception e) {
-                    System.err.println("swipeScreen(): TouchAction FAILED\n" + e.getMessage());
-                    return;
-                }
-                break;
             case UP_FAST:
                 pointOptionEnd = PointOption.point(dims.width / 2, dims.height - (int) (dims.height / 1.2));
                 try {

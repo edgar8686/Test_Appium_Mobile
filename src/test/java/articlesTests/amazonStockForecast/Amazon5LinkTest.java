@@ -36,8 +36,6 @@ public class Amazon5LinkTest extends AbstractTest {
             tapElement.tapAmazon5();
             getAndroidDriver().context("WEBVIEW_chrome");
             getAndroidDriver().getWindowHandle();
-            System.out.println(getAndroidDriver().getTitle());
-            System.out.println(getAndroidDriver().getCurrentUrl());
             Assertions.assertTrue(getAndroidDriver().getTitle().equals("Amazon.com Inc (AMZN) Stock Price & Chart | Trade Now"));
             Assertions.assertTrue(getAndroidDriver().getCurrentUrl().equals("https://capital.com/amazon-share-price"));
         } catch (AssertionFailedError a) {
