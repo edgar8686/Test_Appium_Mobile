@@ -46,7 +46,7 @@ public class RipplePricePredictionElements extends AbstractPageObject {
     public RipplePricePredictionElements tapRipplePricePrediction() {
         TouchAction touchAction = new TouchAction(getAndroidDriver());
         touchAction
-                .press(PointOption.point(620, 2000))
+                .press(PointOption.point(620, 2100))
                 .waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000)))
                 .moveTo(PointOption.point(620, 200))
                 .release()
